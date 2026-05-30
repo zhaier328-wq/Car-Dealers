@@ -30,16 +30,14 @@ const page: React.FC = () => {
       <ServiceOne />
       <AboutOne />
       <ProcessOne />
-      <Booking />
       <WhychooseOne />
       <ListingOne />
       <VideoOne />
-      <PricingOne />
+     
       <TestimonialOne />
       <FaqOne />
       <LetsTalk />
-      <TeamOne />
-      <DownloadApp />
+      
       <BrandOne />
       <OurBlog />
       <Gallery />
