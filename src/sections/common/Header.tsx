@@ -61,7 +61,7 @@ const Header: React.FC = () => {
                     <div className="main-menu__wrapper-inner" >
                         <div className="main-menu__left">
                             <div className="main-menu__logo">
-                                <Link href="/"><Image src={logoOne} width={130} height={50} alt="" /></Link>
+                                <Link href="/"><Image src={logoOne}  height={50} alt="" /></Link>
                             </div>
                         </div>
                         <div className="main-menu__middle-box">
