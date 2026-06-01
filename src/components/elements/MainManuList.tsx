@@ -2,10 +2,8 @@
 import React from 'react';  
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
-import { ManuItemOnePage, NavItem } from '../link-content/LinkType';
+import { ManuItemOnePage } from '../link-content/LinkType';
 import MobileManuListSingle from './MobileManuListSingle';
-import { blogs_link, cars_link, home_link, pages_link, shops_link } from '../link-content/NavLink';
-
 
 interface ComponentProps {
     onePageManuList: ManuItemOnePage[]
@@ -13,13 +11,7 @@ interface ComponentProps {
 
 const MainManuList: React.FC<ComponentProps> = ({ onePageManuList }) => {
     const currentPath = usePathname();
-    const findLocation = (array: NavItem[]): boolean => {
-        return array.some(item => item?.link === currentPath);
-    };
     const isOnePage = currentPath.includes("one-page")
-
-
-
 
     if (isOnePage) {
         return <MobileManuListSingle onePageManuListProp={onePageManuList} />
@@ -27,61 +19,53 @@ const MainManuList: React.FC<ComponentProps> = ({ onePageManuList }) => {
     
     return (
         <ul className="main-menu__list">
-            <li className={`dropdown ${findLocation(home_link) ? "current" : ""}`}>
-                <a href="#">Home</a>
+            {/* Home - Single */}
+            <li className={currentPath === "/" ? "current" : ""}>
+                <Link href="/">Home</Link>
+            </li>
+
+            {/* View Stock / Cars Listing - Single */}
+            <li className={currentPath === "/inner/car-list-v-1" ? "current" : ""}>
+                <Link href="/inner/car-list-v-1">View Stock</Link>
+            </li>
+
+            {/* Services - Single */}
+            <li className={currentPath === "/inner/services" ? "current" : ""}>
+                <Link href="/inner/services">Services</Link>
+            </li>
+
+            {/* Finance - With 3 Sub-pages */}
+            <li className={`dropdown ${currentPath.startsWith("/inner/finance") ? "current" : ""}`}>
+                <a href="#">Finance</a>
                 <ul className="shadow-box">
-                    {
-                        home_link.map((Item: NavItem) => <li key={Item?.id} className={currentPath === Item?.link ? "current" : ""}>
-                            <Link href={Item?.link}>{Item?.value}</Link>
-                        </li>)
-                    }
+                    <li className={currentPath === "/inner/finance" ? "current" : ""}>
+                        <Link href="/inner/finance">Finance</Link>
+                    </li>
+                    <li className={currentPath === "/inner/finance/finance-calculator" ? "current" : ""}>
+                        <Link href="/inner/finance/finance-calculator">Finance Calculator</Link>
+                    </li>
+                    <li className={currentPath === "/inner/finance/apply-for-finance" ? "current" : ""}>
+                        <Link href="/inner/finance/apply-for-finance">Apply for Finance</Link>
+                    </li>
+                    <li className={currentPath === "/inner/finance/finance-information" ? "current" : ""}>
+                        <Link href="/inner/finance/finance-information">Finance Information</Link>
+                    </li>
                 </ul>
             </li>
+
+            {/* About Us - Single */}
             <li className={currentPath === "/inner/about" ? "current" : ""}>
                 <Link href="/inner/about">About Us</Link>
             </li>
-            <li className={`dropdown ${findLocation(pages_link) ? "current" : ""}`}>
-                <a href="#">Pages</a>
-                <ul className="shadow-box">
-                    {
-                        pages_link.map((Item: NavItem) => <li key={Item?.id} className={currentPath === Item?.link ? "current" : ""} >
-                            <Link href={Item?.link}>{Item?.value}</Link>
-                        </li>)
-                    }
-                </ul>
+
+            {/* Blog - Single */}
+            <li className={currentPath === "/inner/blog" ? "current" : ""}>
+                <Link href="/inner/blog">Blog</Link>
             </li>
-            <li className={`dropdown ${findLocation(cars_link) ? "current" : ""}`}>
-                <a href="#">Cars</a>
-                <ul className="shadow-box">
-                    {
-                        cars_link.map((Item: NavItem) => <li key={Item?.id} className={currentPath === Item?.link ? "current" : ""} >
-                            <Link href={Item?.link}>{Item?.value}</Link>
-                        </li>)
-                    }
-                </ul>
-            </li>
-            <li className={`dropdown ${findLocation(shops_link) ? "current" : ""}`}>
-                <a href="#">Shop</a>
-                <ul className="shadow-box">
-                    {
-                        shops_link.map((Item: NavItem) => <li key={Item?.id} className={currentPath === Item?.link ? "current" : ""} >
-                            <Link href={Item?.link}>{Item?.value}</Link>
-                        </li>)
-                    }
-                </ul>
-            </li>
-            <li className={`dropdown ${findLocation(blogs_link) ? "current" : ""}`}>
-                <a href="#">Blog</a>
-                <ul className="shadow-box">
-                    {
-                        blogs_link.map((Item: NavItem) => <li key={Item?.id} className={currentPath === Item?.link ? "current" : ""} >
-                            <Link href={Item?.link}>{Item?.value}</Link>
-                        </li>)
-                    }
-                </ul>
-            </li>
+
+            {/* Contact Us - Single */}
             <li className={currentPath === "/inner/contact" ? "current" : ""}>
-                <Link href="/inner/contact">Contact</Link>
+                <Link href="/inner/contact">Contact Us</Link>
             </li>
         </ul>
     );
