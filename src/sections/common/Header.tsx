@@ -19,7 +19,7 @@ const Header: React.FC = () => {
                                 <i className="icon-call-2"></i>
                             </div>
                             <div className="text">
-                                <p><a href="tel:9288006780">+92 ( 8800 ) - 6780</a>
+                                <p><a href="tel:9288006780">+1800 006 256</a>
                                 </p>
                             </div>
                         </li>
@@ -28,7 +28,7 @@ const Header: React.FC = () => {
                                 <i className="icon-envelope-2"></i>
                             </div>
                             <div className="text">
-                                <p><a href="mailto:support@gmail.com">support@gmail.com</a>
+                                <p><a href="mailto:sales.maidstone@ukajapan.com.au">sales.maidstone@ukajapan.com.au</a>
                                 </p>
                             </div>
                         </li>
@@ -37,7 +37,7 @@ const Header: React.FC = () => {
                                 <i className="icon-pin-2"></i>
                             </div>
                             <div className="text">
-                                <p>55 Main Street, 2nd block, Malborne ,Australia</p>
+                                <p>205 Ballarat Rd, Maidstone, VIC 3012</p>
                             </div>
                         </li>
                     </ul>

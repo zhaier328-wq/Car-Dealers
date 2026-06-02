@@ -109,7 +109,7 @@ const AboutOne: React.FC = () => {
               <div className="about-one__btn-box-and-call-box">
                 <div className="about-one__btn-box">
                   <Link href="/inner/about" className="about-one__btn thm-btn">
-                    Read More
+                    Read More 
                     <span className="fas fa-arrow-right"></span>
                   </Link>
                 </div>

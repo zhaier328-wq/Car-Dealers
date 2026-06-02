@@ -19,28 +19,47 @@ const MainManuList: React.FC<ComponentProps> = ({ onePageManuList }) => {
     
     return (
         <ul className="main-menu__list">
-            {/* Home - Single */}
+            {/* HOME - Single */}
             <li className={currentPath === "/" ? "current" : ""}>
                 <Link href="/">Home</Link>
             </li>
 
-            {/* View Stock / Cars Listing */}
-            <li className={currentPath === "/inner/car-list-v-1" ? "current" : ""}>
-                <Link href="/inner/car-list-v-1">View Stock</Link>
+            {/* VIEW STOCK - With Nested Dropdown */}
+            <li className={`dropdown ${currentPath.startsWith("/inner/view-stock") ? "current" : ""}`}>
+                <a href="#">View Stock</a>
+                <ul className="shadow-box">
+                    {/* Melbourne Sub-dropdown */}
+                    <li className={`dropdown ${currentPath.startsWith("/inner/view-stock/melbourne") ? "current" : ""}`}>
+                        <a href="#">Melbourne</a>
+                        <ul className="shadow-box">
+                            <li className={currentPath === "/inner/view-stock/melbourne/all-melbourne-stock" ? "current" : ""}>
+                                <Link href="/inner/view-stock/melbourne/all-melbourne-stock">All Melbourne Stock</Link>
+                            </li>
+                            <li className={currentPath === "/inner/view-stock/melbourne/maidstone-yard" ? "current" : ""}>
+                                <Link href="/inner/view-stock/melbourne/maidstone-yard">Maidstone Yard</Link>
+                            </li>
+                            <li className={currentPath === "/inner/view-stock/melbourne/mordialloc-yard" ? "current" : ""}>
+                                <Link href="/inner/view-stock/melbourne/mordialloc-yard">Mordialloc Yard</Link>
+                            </li>
+                        </ul>
+                    </li>
+
+                    {/* Brisbane Sub-dropdown */}
+                    <li className={`dropdown ${currentPath.startsWith("/inner/view-stock/brisbane") ? "current" : ""}`}>
+                        <a href="#">Brisbane</a>
+                        <ul className="shadow-box">
+                            <li className={currentPath === "/inner/view-stock/brisbane/slack-creek" ? "current" : ""}>
+                                <Link href="/inner/view-stock/brisbane/slack-creek">Slack Creek</Link>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
             </li>
 
-            {/* Services */}
-            <li className={currentPath === "/inner/services" ? "current" : ""}>
-                <Link href="/inner/services">Services</Link>
-            </li>
-
-            {/* Finance - With 3 Sub-pages */}
+            {/* FINANCE - With Dropdown */}
             <li className={`dropdown ${currentPath.startsWith("/inner/finance") ? "current" : ""}`}>
                 <a href="#">Finance</a>
                 <ul className="shadow-box">
-                    <li className={currentPath === "/inner/finance" ? "current" : ""}>
-                        <Link href="/inner/finance">Finance</Link>
-                    </li>
                     <li className={currentPath === "/inner/finance/finance-calculator" ? "current" : ""}>
                         <Link href="/inner/finance/finance-calculator">Finance Calculator</Link>
                     </li>
@@ -53,19 +72,43 @@ const MainManuList: React.FC<ComponentProps> = ({ onePageManuList }) => {
                 </ul>
             </li>
 
-            {/* About Us */}
+            {/* ON SALE CARS - Single */}
+            <li className={currentPath === "/inner/on-sale-cars" ? "current" : ""}>
+                <Link href="/inner/cars">On Sale Cars</Link>
+            </li>
+
+            {/* WHOLESALE - Single */}
+            <li className={currentPath === "/inner/wholesale" ? "current" : ""}>
+                <Link href="/inner/wholesale">Wholesale</Link>
+            </li>
+
+            {/* WARRANTY - Single */}
+            <li className={currentPath === "/inner/warranty" ? "current" : ""}>
+                <Link href="/inner/warranty">Warranty</Link>
+            </li>
+
+            {/* CONTACT US - Single */}
+            <li className={currentPath === "/inner/contact" ? "current" : ""}>
+                <Link href="/inner/contact">Contact Us</Link>
+            </li>
+
+            {/* ABOUT US - Single */}
             <li className={currentPath === "/inner/about" ? "current" : ""}>
                 <Link href="/inner/about">About Us</Link>
             </li>
 
-            {/* Blog */}
-            <li className={currentPath === "/inner/blog" ? "current" : ""}>
-                <Link href="/inner/blog">Blog</Link>
-            </li>
-
-            {/* Contact Us */}
-            <li className={currentPath === "/inner/contact" ? "current" : ""}>
-                <Link href="/inner/contact">Contact Us</Link>
+            {/* MORE - With Dropdown */}
+            <li className={`dropdown ${currentPath.startsWith("/inner/more") ? "current" : ""}`}>
+                <a href="#">More</a>
+                <ul className="shadow-box">
+                    <li className={currentPath === "/inner/blog" ? "current" : ""}>
+                        <Link href="/inner/blog">Blog</Link>
+                    </li>
+                    <li className={currentPath === "/inner/faqs" ? "current" : ""}>
+                        <Link href="/inner/faq">FAQs</Link>
+                      
+                    </li>
+                </ul>
             </li>
         </ul>
     );

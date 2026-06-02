@@ -90,7 +90,7 @@ const PricingOne: React.FC = () => {
                                 </div>
                                 <div className="call-one__content">
                                     <p>Call Emergency</p>
-                                    <h4><a href="tel:+9288006780">+92 ( 8800 ) - 6780</a></h4>
+                                    <h4><a href="tel:+9288006780">+1800 006 256</a></h4>
                                 </div>
                             </div>
                             <div className="call-one__btn-box">
