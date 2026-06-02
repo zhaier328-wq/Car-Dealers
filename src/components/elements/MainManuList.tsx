@@ -24,12 +24,12 @@ const MainManuList: React.FC<ComponentProps> = ({ onePageManuList }) => {
                 <Link href="/">Home</Link>
             </li>
 
-            {/* View Stock / Cars Listing - Single */}
+            {/* View Stock / Cars Listing */}
             <li className={currentPath === "/inner/car-list-v-1" ? "current" : ""}>
                 <Link href="/inner/car-list-v-1">View Stock</Link>
             </li>
 
-            {/* Services - Single */}
+            {/* Services */}
             <li className={currentPath === "/inner/services" ? "current" : ""}>
                 <Link href="/inner/services">Services</Link>
             </li>
@@ -53,17 +53,17 @@ const MainManuList: React.FC<ComponentProps> = ({ onePageManuList }) => {
                 </ul>
             </li>
 
-            {/* About Us - Single */}
+            {/* About Us */}
             <li className={currentPath === "/inner/about" ? "current" : ""}>
                 <Link href="/inner/about">About Us</Link>
             </li>
 
-            {/* Blog - Single */}
+            {/* Blog */}
             <li className={currentPath === "/inner/blog" ? "current" : ""}>
                 <Link href="/inner/blog">Blog</Link>
             </li>
 
-            {/* Contact Us - Single */}
+            {/* Contact Us */}
             <li className={currentPath === "/inner/contact" ? "current" : ""}>
                 <Link href="/inner/contact">Contact Us</Link>
             </li>

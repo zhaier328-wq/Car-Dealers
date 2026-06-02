@@ -108,8 +108,7 @@ const Footer: React.FC = () => {
                                             <div className="icon">
                                                 <span className="icon-pin"></span>
                                             </div>
-                                            <p>4140 Parker Rd. Allentown, New
-                                                <br /> Mexico 31134</p>
+                                            <p>205 Ballarat Rd,Maidstone <br /> VIC 3012 </p>
                                         </motion.li>
                                         <motion.li
                                             initial={{ x: 40, opacity: 0 }}
@@ -123,7 +122,7 @@ const Footer: React.FC = () => {
                                             <div className="icon">
                                                 <span className="icon-call"></span>
                                             </div>
-                                            <p><a href="tel:2195550114">(219) 555-0114</a></p>
+                                            <p><a href="tel:2195550114">03 4329 0786</a></p>
                                         </motion.li>
                                         <motion.li
                                             initial={{ x: 40, opacity: 0 }}
@@ -137,7 +136,7 @@ const Footer: React.FC = () => {
                                             <div className="icon">
                                                 <span className="icon-envelope"></span>
                                             </div>
-                                            <p><a href="mailto:gorent@gmail.com">gorent@gmail.com</a></p>
+                                            <p><a href="mailto:sales.maidstone@ukajapan.com.au">sales.maidstone@ukajapan.com.au</a></p>
                                         </motion.li>
                                     </ul>
                                 </div>

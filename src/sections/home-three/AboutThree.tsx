@@ -94,7 +94,7 @@ const AboutThree: React.FC = () => {
                                             <p>Call to Anytime</p>
                                             <h4>
                                                 <a href="tel:15502505260">
-                                                    +1 (550) 250 5260
+                                                    +1800 006 256
                                                 </a>
                                             </h4>
                                         </div>

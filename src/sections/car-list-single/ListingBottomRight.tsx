@@ -113,7 +113,7 @@ const ListingBottomRight: React.FC = () => {
                 <div className="listing-single__contact-info listing-single__single-box">
                     <div className="listing-single__contact-phone">
                         <a href="tel:15502505260" className="listing-single__contact-phone-number"> <span
-                            className="icon-call-3"></span> +1 (550) 250 5260</a>
+                            className="icon-call-3"></span> +1800 006 256</a>
                         <p className="listing-single__contact-phone-text">Click here to reveal phone number.
                         </p>
                     </div>
@@ -140,7 +140,7 @@ const ListingBottomRight: React.FC = () => {
                                     <i className="far fa-phone"></i>
                                 </div>
                                 <div className="text">
-                                    <p><a href="tel:15502505260">+1 (550) 250 5260</a>
+                                    <p><a href="tel:15502505260">+1800 006 256</a>
                                     </p>
                                 </div>
                             </li>
