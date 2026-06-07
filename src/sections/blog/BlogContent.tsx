@@ -2,17 +2,18 @@
 import React, { useState } from 'react';
 import { motion } from "framer-motion" 
 import Image from 'next/image';
-import { blogData } from '@/all-content/blog/blogData';
 import { BlogItem } from '@/all-content/blog/blogType';
+import { useBlogs } from '@/hooks/useBlogs';
 
 const BlogContent: React.FC = () => {
+    const { blogs } = useBlogs();
     const [currentPage, setCurrentPage] = useState(1);
     const ITEMS_PER_PAGE = 8;
-    // Calculate paginated blogs
-    const totalPages = Math.ceil(blogData.length / ITEMS_PER_PAGE);
+    
+    const totalPages = Math.ceil(blogs.length / ITEMS_PER_PAGE);
     const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-    const currentBlog = blogData.slice(startIndex, startIndex + ITEMS_PER_PAGE);
-    // Handle page change
+    const currentBlog = blogs.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+    
     const handlePageChange = (page: number) => {
         if (page >= 1 && page <= totalPages) setCurrentPage(page);
     };
@@ -24,18 +25,15 @@ const BlogContent: React.FC = () => {
                     <motion.div
                         initial={{ y: blog.id % 2 === 0 ? 20 : -20, opacity: 0 }}
                         whileInView={{ y: 0, opacity: 1 }}
-                        transition={{
-                            duration: 0.5,
-                            ease: "easeOut"
-                        }}
-                        viewport={{ amount: 0., once: true }}
+                        transition={{ duration: 0.5, ease: "easeOut" }}
+                        viewport={{ amount: 0, once: true }}
                         className="col-xl-6 col-lg-6" key={blog.id}>
                         <div className="blog-one__single">
                             <div className="blog-one__img-box">
                                 <div className="blog-one__img">
-                                    {
-                                        blog?.image && (<Image src={blog.image} width={370} height={250} alt={blog.title} />)
-                                    }
+                                    {blog?.image && (
+                                        <Image src={blog.image} width={370} height={250} alt={blog.title} />
+                                    )}
                                     <div className="blog-one__tags">
                                         <span>{blog.tag}</span>
                                     </div>
@@ -85,14 +83,8 @@ const BlogContent: React.FC = () => {
                             ><i className="fas fa-angle-left"></i></button>
                         </li>
                         {Array.from({ length: totalPages }).map((_, index) => (
-                            <li
-                                key={index}
-                                className={`count ${currentPage === index + 1 ? "active" : ""}`}
-                            >
-                                <button
-                                    onClick={() => handlePageChange(index + 1)}
-                                    className="pg-btn"
-                                >
+                            <li key={index} className={`count ${currentPage === index + 1 ? "active" : ""}`}>
+                                <button onClick={() => handlePageChange(index + 1)} className="pg-btn">
                                     {index + 1}
                                 </button>
                             </li>
