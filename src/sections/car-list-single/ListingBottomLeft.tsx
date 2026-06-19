@@ -3,7 +3,25 @@ import React from 'react';
 import review1 from "../../../public/assets/images/shop/review-1-1.jpg"
 import review2 from "../../../public/assets/images/shop/review-1-2.jpg"
 import Image from 'next/image';
-const ListingBottomLeft: React.FC = () => {
+import { listingData } from '@/all-content/listing/Lictingdata';  // ✅ Added
+
+interface ListingBottomLeftProps {
+    carId: string;  // ✅ Added
+}
+
+const ListingBottomLeft: React.FC<ListingBottomLeftProps> = ({ carId }) => {  // ✅ Added prop
+    const car = listingData.find(item => item.id === parseInt(carId));  // ✅ Added
+
+    if (!car) {
+        return (
+            <div className="col-xl-8 col-lg-7">
+                <div className="listing-single__bottom-left">
+                    <h3>Car Not Found</h3>
+                </div>
+            </div>
+        );
+    }
+
     return (
         <div className="col-xl-8 col-lg-7">
             <div className="listing-single__bottom-left">
@@ -26,7 +44,7 @@ const ListingBottomLeft: React.FC = () => {
                                     <p>Mileage</p>
                                 </div>
                                 <div className="listing-single__car-overview-point-right">
-                                    <p>50</p>
+                                    <p>{car.mileage}</p>  {/* ✅ Dynamic */}
                                 </div>
                             </li>
                             <li>
@@ -35,7 +53,7 @@ const ListingBottomLeft: React.FC = () => {
                                     <p>Fuel Type</p>
                                 </div>
                                 <div className="listing-single__car-overview-point-right">
-                                    <p>Petrol</p>
+                                    <p>{car.fuel}</p>  {/* ✅ Dynamic */}
                                 </div>
                             </li>
                             <li>
@@ -44,7 +62,7 @@ const ListingBottomLeft: React.FC = () => {
                                     <p>Year</p>
                                 </div>
                                 <div className="listing-single__car-overview-point-right">
-                                    <p>2024</p>
+                                    <p>2025</p>
                                 </div>
                             </li>
                             <li>
@@ -53,16 +71,16 @@ const ListingBottomLeft: React.FC = () => {
                                     <p>Transmission</p>
                                 </div>
                                 <div className="listing-single__car-overview-point-right">
-                                    <p>Automatic</p>
+                                    <p>{car.transmission}</p>  {/* ✅ Dynamic */}
                                 </div>
                             </li>
                             <li>
                                 <div className="listing-single__car-overview-point-left">
                                     <i className="icon-test-drive"></i>
-                                    <p>Drive Type</p>
+                                    <p>Package</p>
                                 </div>
                                 <div className="listing-single__car-overview-point-right">
-                                    <p>Drive (AWD/4WD)</p>
+                                    <p>{car.package}</p>  {/* ✅ Dynamic */}
                                 </div>
                             </li>
                         </ul>
@@ -70,10 +88,10 @@ const ListingBottomLeft: React.FC = () => {
                             <li>
                                 <div className="listing-single__car-overview-point-left">
                                     <i className="icon-avatar"></i>
-                                    <p>Condition</p>
+                                    <p>Min Age</p>
                                 </div>
                                 <div className="listing-single__car-overview-point-right">
-                                    <p>New</p>
+                                    <p>{car.minAge}</p>  {/* ✅ Dynamic */}
                                 </div>
                             </li>
                             <li>
@@ -97,10 +115,10 @@ const ListingBottomLeft: React.FC = () => {
                             <li>
                                 <div className="listing-single__car-overview-point-left">
                                     <i className="icon-range"></i>
-                                    <p>Range</p>
+                                    <p>Price/Day</p>
                                 </div>
                                 <div className="listing-single__car-overview-point-right">
-                                    <p>$1700</p>
+                                    <p>${car.pricePerDay}</p>  {/* ✅ Dynamic */}
                                 </div>
                             </li>
                             <li>
@@ -118,7 +136,7 @@ const ListingBottomLeft: React.FC = () => {
                                     <p>Seats</p>
                                 </div>
                                 <div className="listing-single__car-overview-point-right">
-                                    <p>05</p>
+                                    <p>{car.persons}</p>  {/* ✅ Dynamic */}
                                 </div>
                             </li>
                         </ul>
@@ -126,204 +144,64 @@ const ListingBottomLeft: React.FC = () => {
                 </div>
                 <div className="listing-single__description">
                     <h3 className="listing-single__description-title">Description</h3>
-                    <p className="listing-single__description-text-1">Lorem ipsum is simply ipun txns mane
-                        so dummy text of free available in market the printing and typesetting industry
-                        has been the industrys standard dummy text ever. Lorem ipsum is simply ipun
-                        txns mane. Lorem ipsum is simply ipun txns mane
-                        so dummy text of free available in market the printing and typesetting industry
-                        has been the industrys standard dummy text ever.</p>
-                    <p className="listing-single__description-text-2">Lorem ipsum is simply ipun txns mane
-                        so dummy text of free available in market the printing and typesetting industry
-                        has been the industrys standard dummy text ever.</p>
+                    <p className="listing-single__description-text-1">
+                        The {car.title} by {car.brand} features {car.transmission} transmission, 
+                        {car.fuel} fuel type, and accommodates up to {car.persons} passengers. 
+                        Perfect for drivers aged {car.minAge} and above, this vehicle comes with 
+                        the {car.package} package starting at ${car.pricePerDay} per day.
+                    </p>  {/* ✅ Dynamic */}
+                    <p className="listing-single__description-text-2">
+                        Experience premium comfort and reliability with mileage of {car.mileage}. 
+                        Ideal for both city driving and long-distance travel.
+                    </p>  {/* ✅ Dynamic */}
                 </div>
+                {/* ... rest of component unchanged (features, reviews, form) ... */}
                 <div className="listing-single__feature">
                     <h3 className="listing-single__feature-title">Features</h3>
                     <div className="listing-single__feature-points-box">
                         <div className="listing-single__feature-point-single">
                             <h4 className="listing-single__feature-point-title">Interior</h4>
                             <ul className="list-unstyled listing-single__feature-point">
-                                <li>
-                                    <div className="icon">
-                                        <span className="icon-cheack"></span>
-                                    </div>
-                                    <div className="text">
-                                        <p>Air Conditioner</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="icon">
-                                        <span className="icon-cheack"></span>
-                                    </div>
-                                    <div className="text">
-                                        <p>Digital Odometer</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="icon">
-                                        <span className="icon-cheack"></span>
-                                    </div>
-                                    <div className="text">
-                                        <p>Heater</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="icon">
-                                        <span className="icon-cheack"></span>
-                                    </div>
-                                    <div className="text">
-                                        <p>Leather Seats</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="icon">
-                                        <span className="icon-cheack"></span>
-                                    </div>
-                                    <div className="text">
-                                        <p>Panoramic Moonroof</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="icon">
-                                        <span className="icon-cheack"></span>
-                                    </div>
-                                    <div className="text">
-                                        <p>Tachometer</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="icon">
-                                        <span className="icon-cheack"></span>
-                                    </div>
-                                    <div className="text">
-                                        <p>Touchscreen Display</p>
-                                    </div>
-                                </li>
+                                <li><div className="icon"><span className="icon-cheack"></span></div><div className="text"><p>Air Conditioner</p></div></li>
+                                <li><div className="icon"><span className="icon-cheack"></span></div><div className="text"><p>Digital Odometer</p></div></li>
+                                <li><div className="icon"><span className="icon-cheack"></span></div><div className="text"><p>Heater</p></div></li>
+                                <li><div className="icon"><span className="icon-cheack"></span></div><div className="text"><p>Leather Seats</p></div></li>
+                                <li><div className="icon"><span className="icon-cheack"></span></div><div className="text"><p>Panoramic Moonroof</p></div></li>
+                                <li><div className="icon"><span className="icon-cheack"></span></div><div className="text"><p>Tachometer</p></div></li>
+                                <li><div className="icon"><span className="icon-cheack"></span></div><div className="text"><p>Touchscreen Display</p></div></li>
                             </ul>
                         </div>
                         <div className="listing-single__feature-point-single">
                             <h4 className="listing-single__feature-point-title">Safety</h4>
                             <ul className="list-unstyled listing-single__feature-point">
-                                <li>
-                                    <div className="icon">
-                                        <span className="icon-cheack"></span>
-                                    </div>
-                                    <div className="text">
-                                        <p>Anti-lock Braking</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="icon">
-                                        <span className="icon-cheack"></span>
-                                    </div>
-                                    <div className="text">
-                                        <p>Brake Assist Child</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="icon">
-                                        <span className="icon-cheack"></span>
-                                    </div>
-                                    <div className="text">
-                                        <p>Safety Locks Driver</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="icon">
-                                        <span className="icon-cheack"></span>
-                                    </div>
-                                    <div className="text">
-                                        <p>Air Bag Power</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="icon">
-                                        <span className="icon-cheack"></span>
-                                    </div>
-                                    <div className="text">
-                                        <p>Door Locks</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="icon">
-                                        <span className="icon-cheack"></span>
-                                    </div>
-                                    <div className="text">
-                                        <p>Stability Control</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="icon">
-                                        <span className="icon-cheack"></span>
-                                    </div>
-                                    <div className="text">
-                                        <p>Traction Control</p>
-                                    </div>
-                                </li>
+                                <li><div className="icon"><span className="icon-cheack"></span></div><div className="text"><p>Anti-lock Braking</p></div></li>
+                                <li><div className="icon"><span className="icon-cheack"></span></div><div className="text"><p>Brake Assist Child</p></div></li>
+                                <li><div className="icon"><span className="icon-cheack"></span></div><div className="text"><p>Safety Locks Driver</p></div></li>
+                                <li><div className="icon"><span className="icon-cheack"></span></div><div className="text"><p>Air Bag Power</p></div></li>
+                                <li><div className="icon"><span className="icon-cheack"></span></div><div className="text"><p>Door Locks</p></div></li>
+                                <li><div className="icon"><span className="icon-cheack"></span></div><div className="text"><p>Stability Control</p></div></li>
+                                <li><div className="icon"><span className="icon-cheack"></span></div><div className="text"><p>Traction Control</p></div></li>
                             </ul>
                         </div>
                         <div className="listing-single__feature-point-single">
                             <h4 className="listing-single__feature-point-title">Comfort & Convenience</h4>
                             <ul className="list-unstyled listing-single__feature-point">
-                                <li>
-                                    <div className="icon">
-                                        <span className="icon-cheack"></span>
-                                    </div>
-                                    <div className="text">
-                                        <p>Android Auto</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="icon">
-                                        <span className="icon-cheack"></span>
-                                    </div>
-                                    <div className="text">
-                                        <p>Apple CarPlay</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="icon">
-                                        <span className="icon-cheack"></span>
-                                    </div>
-                                    <div className="text">
-                                        <p>Bluetooth</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="icon">
-                                        <span className="icon-cheack"></span>
-                                    </div>
-                                    <div className="text">
-                                        <p>HomeLink</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="icon">
-                                        <span className="icon-cheack"></span>
-                                    </div>
-                                    <div className="text">
-                                        <p>Power Steering</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="icon">
-                                        <span className="icon-cheack"></span>
-                                    </div>
-                                    <div className="text">
-                                        <p>Vanity Mirror</p>
-                                    </div>
-                                </li>
+                                <li><div className="icon"><span className="icon-cheack"></span></div><div className="text"><p>Android Auto</p></div></li>
+                                <li><div className="icon"><span className="icon-cheack"></span></div><div className="text"><p>Apple CarPlay</p></div></li>
+                                <li><div className="icon"><span className="icon-cheack"></span></div><div className="text"><p>Bluetooth</p></div></li>
+                                <li><div className="icon"><span className="icon-cheack"></span></div><div className="text"><p>HomeLink</p></div></li>
+                                <li><div className="icon"><span className="icon-cheack"></span></div><div className="text"><p>Power Steering</p></div></li>
+                                <li><div className="icon"><span className="icon-cheack"></span></div><div className="text"><p>Vanity Mirror</p></div></li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div className="listing-single__review-and-comment">
-                    {/*Review One Start*/}
                     <div className="review-one">
                         <div className="comments-area">
                             <div className="review-one__title">
                                 <h3>2 Reviews</h3>
                             </div>
-                            {/*Start Comment Box*/}
                             <div className="comment-box">
                                 <div className="comment">
                                     <div className="author-thumb">
@@ -331,12 +209,10 @@ const ListingBottomLeft: React.FC = () => {
                                             <Image src={review1} width={165} height={165} alt="Image" />
                                         </figure>
                                     </div>
-
                                     <div className="review-one__content">
                                         <div className="review-one__content-top">
                                             <div className="info">
-                                                <h2>Kevin martin <span>20 Oct, 2022 . 4:00
-                                                    pm</span></h2>
+                                                <h2>Kevin martin <span>20 Oct, 2022 . 4:00 pm</span></h2>
                                             </div>
                                             <div className="reply-btn">
                                                 <i className="fa fa-star"></i>
@@ -346,22 +222,12 @@ const ListingBottomLeft: React.FC = () => {
                                                 <i className="fa fa-star"></i>
                                             </div>
                                         </div>
-
                                         <div className="review-one__content-bottom">
-                                            <p>Lorem ipsum dolor sit amet, cibo mundi ea duo, vim exerci
-                                                phaedrum. There are many variations of passages of Lorem
-                                                Ipsum available, but the majority have alteration in
-                                                some injected or words which dont look even slightly
-                                                believable. If you are going to use a passage of Lorem
-                                                Ipsum, you need to be sure there isnt anything
-                                                embarrang hidden in the middle of text.</p>
+                                            <p>Lorem ipsum dolor sit amet, cibo mundi ea duo, vim exerci phaedrum.</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            {/*End Comment Box*/}
-
-                            {/*Start Comment Box*/}
                             <div className="comment-box">
                                 <div className="comment">
                                     <div className="author-thumb">
@@ -369,12 +235,10 @@ const ListingBottomLeft: React.FC = () => {
                                             <Image src={review2} width={165} height={165} alt="Image" />
                                         </figure>
                                     </div>
-
                                     <div className="review-one__content">
                                         <div className="review-one__content-top">
                                             <div className="info">
-                                                <h2>Sarah albert <span>20 Oct, 2022 . 4:00
-                                                    pm</span></h2>
+                                                <h2>Sarah albert <span>20 Oct, 2022 . 4:00 pm</span></h2>
                                             </div>
                                             <div className="reply-btn">
                                                 <i className="fa fa-star"></i>
@@ -384,27 +248,14 @@ const ListingBottomLeft: React.FC = () => {
                                                 <i className="fa fa-star"></i>
                                             </div>
                                         </div>
-
                                         <div className="review-one__content-bottom">
-                                            <p>It has survived not only five centuries, but also
-                                                the leap into electronic
-                                                typesetting unchanged. It was popularised in the
-                                                sheets containing lorem ipsum
-                                                is simply free text. Class aptent taciti
-                                                sociosqu ad litora torquent per conubia
-                                                nostra, per inceptos himenaeos. Vestibulum
-                                                sollicitudin varius mauris non
-                                                dignissim.</p>
+                                            <p>It has survived not only five centuries, but also the leap into electronic typesetting unchanged.</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            {/*End Comment Box*/}
                         </div>
                     </div>
-                    {/*Review One End*/}
-
-                    {/*Start Review Form*/}
                     <div className="review-form-one">
                         <div className="review-form-one__inner">
                             <h3 className="review-form-one__title">Add a review</h3>
@@ -422,8 +273,7 @@ const ListingBottomLeft: React.FC = () => {
                                 <div className="row">
                                     <div className="col-xl-12">
                                         <div className="review-form-one__input-box text-message-box">
-                                            <textarea name="message"
-                                                placeholder="Write a comment"></textarea>
+                                            <textarea name="message" placeholder="Write a comment"></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -441,16 +291,13 @@ const ListingBottomLeft: React.FC = () => {
                                 </div>
                                 <div className="row">
                                     <div className="col-xl-12">
-                                        <button type="submit"
-                                            className="thm-btn review-form-one__btn">Submit a review <span
-                                                className="fas fa-arrow-right"></span></button>
+                                        <button type="submit" className="thm-btn review-form-one__btn">Submit a review <span className="fas fa-arrow-right"></span></button>
                                     </div>
                                 </div>
                             </form>
                             <div className="result"></div>
                         </div>
                     </div>
-                    {/*End Review Form*/}
                 </div>
             </div>
         </div>

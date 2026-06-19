@@ -1,9 +1,10 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
+import type { SearchFilters } from "@/app/page";
 
 // =========================================
-// ICONS
+// ICONS (unchanged)
 // =========================================
 
 const IconChevronDown = () => (
@@ -89,7 +90,7 @@ const IconSliders = () => (
 );
 
 // =========================================
-// SELECT COMPONENT
+// SELECT COMPONENT (unchanged)
 // =========================================
 
 const SearchSelect = ({
@@ -197,10 +198,15 @@ const SearchSelect = ({
 };
 
 // =========================================
-// MAIN COMPONENT
+// MAIN COMPONENT — MODIFIED
 // =========================================
 
-const SearchSection: React.FC = () => {
+interface SearchSectionProps {
+  onSearch: (filters: SearchFilters) => void;
+  resultCount: number;
+}
+
+const SearchSection: React.FC<SearchSectionProps> = ({ onSearch, resultCount }) => {
   const [bodyStyle, setBodyStyle] = useState("All Body Styles");
   const [make, setMake] = useState("All Makes");
   const [model, setModel] = useState("All Models");
@@ -221,10 +227,14 @@ const SearchSection: React.FC = () => {
   const fuelTypes = ["All Fuel Types", "Petrol", "Diesel", "Hybrid", "Electric"];
   const transmissions = ["All Transmissions", "Automatic", "Manual", "CVT"];
 
-  const resultCount = 559;
-
   const handleSearch = () => {
-    console.log({ bodyStyle, make, model, minPrice, maxPrice, minYear, maxYear, location, fuelType, transmission });
+    onSearch({
+      make,
+      fuelType,
+      transmission,
+      minPrice,
+      maxPrice,
+    });
   };
 
   const rowStyle: React.CSSProperties = {

@@ -135,7 +135,7 @@ const PricingMain: React.FC = () => {
                                         </ul>
 
                                         <div className="pricing-two__btn-box">
-                                            <Link href="inner/listing-single" className="thm-btn" >
+                                            <Link href="inner/inner/listing-single" className="thm-btn" >
                                                 Rent Now
                                                 <span className="fas fa-arrow-right"></span>
                                             </Link>

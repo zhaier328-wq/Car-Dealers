@@ -1,4 +1,3 @@
-
 import listing1 from "../../../public/assets/images/listing/listing-1-1.jpg";
 import listing2 from "../../../public/assets/images/listing/listing-1-2.jpg";
 import listing3 from "../../../public/assets/images/listing/listing-1-3.jpg";
@@ -35,7 +34,7 @@ export const listingData: ListingItem[] = [
         minAge: "25",
         persons: "5",
         pricePerDay: 100,
-        link: "/listing-single",
+        link: "/inner/listing-single/1",  // ✅ Changed
     },
     {
         id: 2,
@@ -49,7 +48,7 @@ export const listingData: ListingItem[] = [
         minAge: "25",
         persons: "5",
         pricePerDay: 100,
-        link: "/listing-single",
+        link: "/inner/listing-single/2",  // ✅ Changed
     },
     {
         id: 3,
@@ -63,7 +62,7 @@ export const listingData: ListingItem[] = [
         minAge: "25",
         persons: "5",
         pricePerDay: 100,
-        link: "/listing-single",
+        link: "/inner/listing-single/3",  // ✅ Changed
     },
     {
         id: 4,
@@ -77,13 +76,13 @@ export const listingData: ListingItem[] = [
         minAge: "25",
         persons: "5",
         pricePerDay: 100,
-        link: "/listing-single",
+        link: "/inner/listing-single/4",  // ✅ Changed
     },
     {
         id: 5,
         image: listing5,
         brand: "Acura",
-        title: "Audi Sport Version",
+        title: "about-one-img-2.jpegort Version",
         transmission: "Manual",
         mileage: "25 KM",
         fuel: "Diesel",
@@ -91,7 +90,7 @@ export const listingData: ListingItem[] = [
         minAge: "25",
         persons: "5",
         pricePerDay: 100,
-        link: "/listing-single",
+        link: "/inner/listing-single/5",  // ✅ Changed
     },
     {
         id: 6,
@@ -105,7 +104,7 @@ export const listingData: ListingItem[] = [
         minAge: "25",
         persons: "5",
         pricePerDay: 100,
-        link: "/listing-single",
+        link: "/inner/listing-single/6",  // ✅ Changed
     },
     {
         id: 7,
@@ -119,7 +118,7 @@ export const listingData: ListingItem[] = [
         minAge: "25",
         persons: "5",
         pricePerDay: 100,
-        link: "/listing-single",
+        link: "/inner/listing-single/7",  // ✅ Changed
     },
     {
         id: 8,
@@ -133,7 +132,7 @@ export const listingData: ListingItem[] = [
         minAge: "25",
         persons: "5",
         pricePerDay: 100,
-        link: "/listing-single",
+        link: "/inner/listing-single/8",  // ✅ Changed
     },
     {
         id: 9,
@@ -147,7 +146,7 @@ export const listingData: ListingItem[] = [
         minAge: "25",
         persons: "5",
         pricePerDay: 100,
-        link: "/listing-single",
+        link: "/inner/listing-single/9",  // ✅ Changed
     },
     {
         id: 10,
@@ -161,13 +160,13 @@ export const listingData: ListingItem[] = [
         minAge: "25",
         persons: "5",
         pricePerDay: 100,
-        link: "/listing-single",
+        link: "/inner/listing-single/10",  // ✅ Changed
     },
     {
         id: 11,
         image: listing5,
         brand: "Acura",
-        title: "Audi Sport Version",
+        title: "about-one-img-2.jpegort Version",
         transmission: "Manual",
         mileage: "25 KM",
         fuel: "Diesel",
@@ -175,7 +174,7 @@ export const listingData: ListingItem[] = [
         minAge: "25",
         persons: "5",
         pricePerDay: 100,
-        link: "/listing-single",
+        link: "/inner/listing-single/11",  // ✅ Changed
     },
     {
         id: 12,
@@ -189,7 +188,7 @@ export const listingData: ListingItem[] = [
         minAge: "25",
         persons: "5",
         pricePerDay: 100,
-        link: "/listing-single",
+        link: "/inner/listing-single/12",  // ✅ Changed
     },
     {
         id: 13,
@@ -203,7 +202,7 @@ export const listingData: ListingItem[] = [
         minAge: "25",
         persons: "5",
         pricePerDay: 100,
-        link: "/listing-single",
+        link: "/inner/listing-single/13",  // ✅ Changed
     },
     {
         id: 14,
@@ -217,13 +216,13 @@ export const listingData: ListingItem[] = [
         minAge: "25",
         persons: "5",
         pricePerDay: 100,
-        link: "/listing-single",
+        link: "/inner/listing-single/14",  // ✅ Changed
     },
     {
         id: 15,
         image: listing5,
         brand: "Acura",
-        title: "Audi Sport Version",
+        title: "about-one-img-2.jpegort Version",
         transmission: "Manual",
         mileage: "25 KM",
         fuel: "Diesel",
@@ -231,7 +230,7 @@ export const listingData: ListingItem[] = [
         minAge: "25",
         persons: "5",
         pricePerDay: 100,
-        link: "/listing-single",
+        link: "/inner/listing-single/15",  // ✅ Changed
     },
     {
         id: 16,
@@ -245,7 +244,7 @@ export const listingData: ListingItem[] = [
         minAge: "25",
         persons: "5",
         pricePerDay: 100,
-        link: "/listing-single",
+        link: "/inner/listing-single/16",  // ✅ Changed
     },
     {
         id: 17,
@@ -259,8 +258,9 @@ export const listingData: ListingItem[] = [
         minAge: "25",
         persons: "5",
         pricePerDay: 100,
-        link: "/listing-single",
-    }, {
+        link: "/inner/listing-single/17",  // ✅ Changed
+    },
+    {
         id: 18,
         image: listing6,
         brand: "Toyota",
@@ -272,7 +272,7 @@ export const listingData: ListingItem[] = [
         minAge: "25",
         persons: "5",
         pricePerDay: 100,
-        link: "/listing-single",
+        link: "/inner/listing-single/18",  // ✅ Changed
     },
     {
         id: 19,
@@ -286,7 +286,7 @@ export const listingData: ListingItem[] = [
         minAge: "25",
         persons: "5",
         pricePerDay: 100,
-        link: "/listing-single",
+        link: "/inner/listing-single/19",  // ✅ Changed
     },
 ];
 
@@ -298,7 +298,7 @@ export const carListTwo: CarItemTwo[] = [
         category: "economy",
         price: "$180.00 /day",
         image: img1,
-        link: "/inner/listing-single",
+        link: "/inner/listing-single/1",  // ✅ Changed
     },
     {
         id: 2,
@@ -306,7 +306,7 @@ export const carListTwo: CarItemTwo[] = [
         category: "economy",
         price: "$180.00 /day",
         image: img2,
-        link: "/inner/listing-single",
+        link: "/inner/listing-single/2",  // ✅ Changed
     },
     {
         id: 3,
@@ -314,7 +314,7 @@ export const carListTwo: CarItemTwo[] = [
         category: "economy",
         price: "$180.00 /day",
         image: img3,
-        link: "/inner/listing-single",
+        link: "/inner/listing-single/3",  // ✅ Changed
     },
     {
         id: 4,
@@ -322,7 +322,7 @@ export const carListTwo: CarItemTwo[] = [
         category: "economy",
         price: "$180.00 /day",
         image: img4,
-        link: "/inner/listing-single",
+        link: "/inner/listing-single/4",  // ✅ Changed
     },
     {
         id: 5,
@@ -330,7 +330,7 @@ export const carListTwo: CarItemTwo[] = [
         category: "economy",
         price: "$180.00 /day",
         image: img5,
-        link: "/inner/listing-single",
+        link: "/inner/listing-single/5",  // ✅ Changed
     },
     {
         id: 6,
@@ -338,7 +338,7 @@ export const carListTwo: CarItemTwo[] = [
         category: "economy",
         price: "$180.00 /day",
         image: img6,
-        link: "/inner/listing-single",
+        link: "/inner/listing-single/6",  // ✅ Changed
     },
     {
         id: 7,
@@ -346,7 +346,7 @@ export const carListTwo: CarItemTwo[] = [
         category: "economy",
         price: "$180.00 /day",
         image: img7,
-        link: "/inner/listing-single",
+        link: "/inner/listing-single/7",  // ✅ Changed
     },
     {
         id: 8,
@@ -354,7 +354,7 @@ export const carListTwo: CarItemTwo[] = [
         category: "economy",
         price: "$180.00 /day",
         image: img8,
-        link: "/inner/listing-single",
+        link: "/inner/listing-single/8",  // ✅ Changed
     },
 ];
 
@@ -432,7 +432,7 @@ export const listingThreeData: ListingThreeItem[] = [
         id: 5,
         image: car5,
         brand: 'Acura',
-        title: 'Audi Sport Version',
+        title: 'about-one-img-2.jpegort Version',
         price: 100,
         metaOne: [
             { icon: 'icon-manual', text: 'Manual' },
@@ -534,7 +534,7 @@ export const listingThreeData: ListingThreeItem[] = [
         id: 11,
         image: car5,
         brand: 'Acura',
-        title: 'Audi Sport Version',
+        title: 'about-one-img-2.jpegort Version',
         price: 100,
         metaOne: [
             { icon: 'icon-manual', text: 'Manual' },
@@ -565,5 +565,3 @@ export const listingThreeData: ListingThreeItem[] = [
         ],
     },
 ];
-
-

@@ -18,15 +18,28 @@ const tabButtons = [
     { id: "acura", title: "Acura" },
 ];
 
-const ListingOne: React.FC = () => {
+interface ListingOneProps {
+    filteredData?: ListingItem[];  // ✅ Added optional prop
+}
+
+const ListingOne: React.FC<ListingOneProps> = ({ filteredData }) => {  // ✅ Accept prop
     const [isActiveTab, setIsActiveTab] = React.useState<string>("tesla");
-    const [tabData, setTabData] = useState<ListingItem[]>(listingData || []);
+    
+    // ✅ Use filteredData if provided, otherwise fall back to full listingData
+    const displayData = filteredData || listingData;
+    
+    const [tabData, setTabData] = useState<ListingItem[]>(displayData);
+
+    // ✅ Update tabData when filteredData changes
+    React.useEffect(() => {
+        setTabData(displayData);
+    }, [displayData]);
 
     const handleTab = (tabId: string) => {
         setIsActiveTab((prev) => prev !== tabId ? tabId : prev);
-        // Filter data based on tabId
         setTabData((previousData) => [...previousData].reverse());
     }
+
     return (
         <section className="listing-one" id='cars'>
             <div className="">
@@ -48,7 +61,6 @@ const ListingOne: React.FC = () => {
                         }
                     </ul>
                     <div className="p-tabs-content">
-                        {/*--tab*/}
                         <div className="p-tab active-tab" id="tesla">
                             <div className="listing-one__inner">
                                 <div className="listing-one__carousel owl-carousel owl-theme owl-loaded owl-drag">
@@ -72,86 +84,90 @@ const ListingOne: React.FC = () => {
                                             1624: { slidesPerView: 5, spaceBetween: 0 },
                                         }}
                                     >
-
                                         {
-                                            tabData.map((item, i) => <SwiperSlide key={i}> <div className="item">
-                                                <div className="listing-one__single MX100">
-                                                    <div className="listing-one__img">
-                                                        <Image src={item.image} width={361} height={220} alt="Car" />
-                                                        <div className="listing-one__brand-name">
-                                                            <p>{item.brand}</p>
+                                            tabData.map((item, i) => (
+                                                <SwiperSlide key={i}> 
+                                                    <div className="item">
+                                                        <div className="listing-one__single MX100">
+                                                            <div className="listing-one__img">
+                                                                <Image src={item.image} width={361} height={220} alt="Car" />
+                                                                <div className="listing-one__brand-name">
+                                                                    <p>{item.brand}</p>
+                                                                </div>
+                                                            </div>
+                                                            <div className="listing-one__content">
+                                                                <h3 className="listing-one__title">
+                                                                    <Link href={`/inner/listing-single/${item.id}`}>{item?.title}</Link>
+                                                                </h3>
+                                                                <div className="listing-one__meta-box-info">
+                                                                    <ul className="list-unstyled listing-one__meta">
+                                                                        <li>
+                                                                            <div className="icon">
+                                                                                <span className="icon-manual"></span>
+                                                                            </div>
+                                                                            <div className="text">
+                                                                                <p>{item?.transmission}</p>
+                                                                            </div>
+                                                                        </li>
+                                                                        <li>
+                                                                            <div className="icon">
+                                                                                <span className="icon-mileage"></span>
+                                                                            </div>
+                                                                            <div className="text">
+                                                                                <p>{item?.mileage}</p>
+                                                                            </div>
+                                                                        </li>
+                                                                        <li>
+                                                                            <div className="icon">
+                                                                                <span className="icon-fuel-type"></span>
+                                                                            </div>
+                                                                            <div className="text">
+                                                                                <p>{item?.fuel}</p>
+                                                                            </div>
+                                                                        </li>
+                                                                    </ul>
+                                                                    <ul className="list-unstyled listing-one__meta listing-one__meta--two">
+                                                                        <li>
+                                                                            <div className="icon">
+                                                                                <span className="icon-test-drive"></span>
+                                                                            </div>
+                                                                            <div className="text">
+                                                                                <p>{item?.package}</p>
+                                                                            </div>
+                                                                        </li>
+                                                                        <li>
+                                                                            <div className="icon">
+                                                                                <span className="icon-avatar"></span>
+                                                                            </div>
+                                                                            <div className="text">
+                                                                                <p>Age {item?.minAge}</p>
+                                                                            </div>
+                                                                        </li>
+                                                                        <li>
+                                                                            <div className="icon">
+                                                                                <span className="icon-in-person"></span>
+                                                                            </div>
+                                                                            <div className="text">
+                                                                                <p>{item?.persons} Persons</p>
+                                                                            </div>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                                <div className="listing-one__car-rent-box">
+                                                                    <p className="listing-one__car-rent">Starting From
+                                                                        <span>${item?.pricePerDay || 100}/</span> Day</p>
+                                                                </div>
+                                                                <div className="listing-one__btn-box">
+                                                                    <Link href={`/inner/listing-single/${item.id}`} className="thm-btn">
+                                                                        Details Now
+                                                                        <span className="fas fa-arrow-right"></span>
+                                                                    </Link>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                    <div className="listing-one__content">
-                                                        <h3 className="listing-one__title"><Link href={item?.link || "/listing-single"}>{item?.title}</Link></h3>
-                                                        <div className="listing-one__meta-box-info">
-                                                            <ul className="list-unstyled listing-one__meta">
-                                                                <li>
-                                                                    <div className="icon">
-                                                                        <span className="icon-manual"></span>
-                                                                    </div>
-                                                                    <div className="text">
-                                                                        <p>{item?.transmission}</p>
-                                                                    </div>
-                                                                </li>
-                                                                <li>
-                                                                    <div className="icon">
-                                                                        <span className="icon-mileage"></span>
-                                                                    </div>
-                                                                    <div className="text">
-                                                                        <p>{item?.mileage}</p>
-                                                                    </div>
-                                                                </li>
-                                                                <li>
-                                                                    <div className="icon">
-                                                                        <span className="icon-fuel-type"></span>
-                                                                    </div>
-                                                                    <div className="text">
-                                                                        <p>{item?.fuel}</p>
-                                                                    </div>
-                                                                </li>
-                                                            </ul>
-                                                            <ul className="list-unstyled listing-one__meta listing-one__meta--two">
-                                                                <li>
-                                                                    <div className="icon">
-                                                                        <span className="icon-test-drive"></span>
-                                                                    </div>
-                                                                    <div className="text">
-                                                                        <p>{item?.package}</p>
-                                                                    </div>
-                                                                </li>
-                                                                <li>
-                                                                    <div className="icon">
-                                                                        <span className="icon-avatar"></span>
-                                                                    </div>
-                                                                    <div className="text">
-                                                                        <p>Age {item?.minAge}</p>
-                                                                    </div>
-                                                                </li>
-                                                                <li>
-                                                                    <div className="icon">
-                                                                        <span className="icon-in-person"></span>
-                                                                    </div>
-                                                                    <div className="text">
-                                                                        <p>{item?.persons} Persons</p>
-                                                                    </div>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                        <div className="listing-one__car-rent-box">
-                                                            <p className="listing-one__car-rent">Starting From
-                                                                <span>${item?.pricePerDay || 100}/</span> Day</p>
-                                                        </div>
-                                                        <div className="listing-one__btn-box">
-                                                            <Link href={item?.link || "/listing-single"} className="thm-btn">
-                                                                Details Now
-                                                                <span className="fas fa-arrow-right"></span>
-                                                            </Link>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            </SwiperSlide>)
+                                                </SwiperSlide>
+                                            ))
                                         }
                                     </Swiper>
                                 </div>

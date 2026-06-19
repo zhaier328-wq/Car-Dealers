@@ -8,11 +8,10 @@ import CarListingRight from './CarListingRight';
 const CarListVOneMain: React.FC = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const ITEMS_PER_PAGE = 12;
-    // Calculate paginated blogs
     const totalPages = Math.ceil(listingData.length / ITEMS_PER_PAGE);
     const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
     const currentCars = listingData.slice(startIndex, startIndex + ITEMS_PER_PAGE);
-    // Handle page change
+
     const handlePageChange = (page: number) => {
         if (page >= 1 && page <= totalPages) setCurrentPage(page);
     };
@@ -36,7 +35,7 @@ const CarListVOneMain: React.FC = () => {
                                                 </div>
                                             </div>
                                             <div className="listing-one__content">
-                                                <h3 className="listing-one__title"><Link href={item?.link || "/listing-single"}>{item?.title}</Link></h3>
+                                                <h3 className="listing-one__title"><Link href={`/inner/listing-single/${item.id}`}>{item?.title}</Link></h3>  {/* ✅ Changed */}
                                                 <div className="listing-one__meta-box-info">
                                                     <ul className="list-unstyled listing-one__meta">
                                                         <li>
@@ -96,7 +95,7 @@ const CarListVOneMain: React.FC = () => {
                                                         <span>${item?.pricePerDay || 100}/</span> Day</p>
                                                 </div>
                                                 <div className="listing-one__btn-box">
-                                                    <Link href={item?.link || "/listing-single"} className="thm-btn">
+                                                    <Link href={`/inner/listing-single/${item.id}`} className="thm-btn">  {/* ✅ Changed */}
                                                         Details Now
                                                         <span className="fas fa-arrow-right"></span>
                                                     </Link>
@@ -140,7 +139,6 @@ const CarListVOneMain: React.FC = () => {
                     </div>
                     <CarListingRight />
                 </div>
-
             </div>
         </section>
     );

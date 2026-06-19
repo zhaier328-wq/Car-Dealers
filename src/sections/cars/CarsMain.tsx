@@ -31,7 +31,7 @@ const CarsMain: React.FC = () => {
                                     </div>
                                 </div>
                                 <div className="listing-one__content">
-                                    <h3 className="listing-one__title"><Link href={item?.link || "/listing-single"}>{item?.title}</Link></h3>
+                                    <h3 className="listing-one__title"><Link href={item?.link || "/inner/listing-single"}>{item?.title}</Link></h3>
                                     <div className="listing-one__meta-box-info">
                                         <ul className="list-unstyled listing-one__meta">
                                             <li>
@@ -91,7 +91,7 @@ const CarsMain: React.FC = () => {
                                             <span>${item?.pricePerDay || 100}/</span> Day</p>
                                     </div>
                                     <div className="listing-one__btn-box">
-                                        <Link href={item?.link || "/listing-single"} className="thm-btn">
+                                        <Link href={item?.link || "/inner/listing-single"} className="thm-btn">
                                             Details Now
                                             <span className="fas fa-arrow-right"></span>
                                         </Link>

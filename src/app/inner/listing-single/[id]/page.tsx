@@ -2,13 +2,19 @@ import CarListingSingleMain from '@/sections/car-list-single/CarListingSingleMai
 import Banner from '@/sections/common/Banner';
 import React from 'react';
 
-const page: React.FC = () => {
+interface PageProps {
+    params: Promise<{ id: string }>;
+}
+
+const ListingSinglePage = async ({ params }: PageProps) => {
+    const { id } = await params;
+
     return (
         <>
             <Banner breadcrumb='Listing Single' />
-            <CarListingSingleMain />
+            <CarListingSingleMain carId={id} />
         </>
     );
 };
 
-export default page;
+export default ListingSinglePage;

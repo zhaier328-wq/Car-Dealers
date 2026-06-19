@@ -1,3 +1,6 @@
+"use client";
+
+import React, { useState } from 'react';
 import Booking from '../sections/common/Booking';
 import DownloadApp from '../sections/common/DownloadApp';
 import Footer from '../sections/common/Footer';
@@ -19,37 +22,57 @@ import TeamOne from '../sections/home-one/TeamOne';
 import TestimonialOne from '../sections/home-one/TestimonialOne';
 import VideoOne from '../sections/home-one/VideoOne';
 import WhychooseOne from '../sections/home-one/WhychooseOne';
-import React from 'react';
 import SearchSection from '../sections/common/Search';
 import WelcomeSection from '../sections/common/Welcome';
+import { listingData } from '@/all-content/listing/Lictingdata';
+import type { ListingItem } from '@/all-content/listing/listType';
 
-const page: React.FC = () => {
+export interface SearchFilters {
+  make: string;
+  fuelType: string;
+  transmission: string;
+  minPrice: string;
+  maxPrice: string;
+}
+
+const Page: React.FC = () => {
+  const [filteredData, setFilteredData] = useState<ListingItem[]>(listingData);
+
+  const handleSearch = (filters: SearchFilters) => {
+    const results = listingData.filter((car) => {
+      const matchMake = filters.make === "All Makes" || car.brand.toLowerCase() === filters.make.toLowerCase();
+      const matchFuel = filters.fuelType === "All Fuel Types" || car.fuel.toLowerCase() === filters.fuelType.toLowerCase();
+      const matchTransmission = filters.transmission === "All Transmissions" || car.transmission.toLowerCase() === filters.transmission.toLowerCase();
+      
+      const carPrice = car.pricePerDay;
+      const min = filters.minPrice ? parseInt(filters.minPrice) : 0;
+      const max = filters.maxPrice ? parseInt(filters.maxPrice) : Infinity;
+      const matchPrice = carPrice >= min && carPrice <= max;
+
+      return matchMake && matchFuel && matchTransmission && matchPrice;
+    });
+
+    setFilteredData(results);
+  };
+
   return (
     <div className='page-wrapper'>
       <Header />
       <BannerOne />
-       <BrandOne />
-         <SearchSection />
-        <ListingOne />
-  <WelcomeSection />
-        <AboutOne />
-         <WhychooseOne />
-           <TestimonialOne /> 
-            <Gallery />
-             <FaqOne />
-              <OurBlog />
-              
-
-      {/* <ServiceOne /> 
-           <SlidingText />    
-      <ProcessOne />
-      <VideoOne />
-     <LetsTalk />  */}
-     
+      <BrandOne />
+      <SearchSection onSearch={handleSearch} resultCount={filteredData.length} />
+      <ListingOne filteredData={filteredData} />
+      <WelcomeSection />
+      <AboutOne />
+      <WhychooseOne />
+      <TestimonialOne />
+      <Gallery />
+      <FaqOne />
+      <OurBlog />
       <Footer />
       <StrickyHeader />
     </div>
   );
 };
 
-export default page;
+export default Page;

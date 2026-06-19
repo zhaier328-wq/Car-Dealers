@@ -1,17 +1,18 @@
 "use client";
 import React, { useState } from 'react';
-import mainSlideImg1 from "../../../public/assets/images/listing/listing-single-1-1.jpg"
-import mainSlideImg2 from "../../../public/assets/images/listing/listing-single-1-2.jpg"
-import mainSlideImg3 from "../../../public/assets/images/listing/listing-single-1-3.jpg"
-import thambImg1 from "../../../public/assets/images/listing/listing-single-thamb-1-1.jpg"
-import thambImg2 from "../../../public/assets/images/listing/listing-single-thamb-1-2.jpg"
-import thambImg3 from "../../../public/assets/images/listing/listing-single-thamb-1-3.jpg"
+import mainSlideImg1 from "../../../public/assets/images/listing/listing-single-1-1.jpg";
+import mainSlideImg2 from "../../../public/assets/images/listing/listing-single-1-2.jpg";
+import mainSlideImg3 from "../../../public/assets/images/listing/listing-single-1-3.jpg";
+import thambImg1 from "../../../public/assets/images/listing/listing-single-thamb-1-1.jpg";
+import thambImg2 from "../../../public/assets/images/listing/listing-single-thamb-1-2.jpg";
+import thambImg3 from "../../../public/assets/images/listing/listing-single-thamb-1-3.jpg";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation } from 'swiper/modules';
 import type { Swiper as SwiperType } from 'swiper';
 import Image, { StaticImageData } from 'next/image';
 import useGorentContext from '@/components/context/useGorentContext';
 import Link from 'next/link';
+import { listingData } from '@/all-content/listing/Lictingdata';  // ✅ Added
 
 interface List {
     icon: string;
@@ -27,6 +28,11 @@ interface MainSliderItem {
     videoUrl: string;
     lists: List[];
 }
+
+interface ListingSlidersProps {
+    carId: string;  // ✅ Added
+}
+
 const thambList: { id: number, img: string | StaticImageData }[] = [
     { id: 1, img: thambImg1 },
     { id: 2, img: thambImg2 },
@@ -34,54 +40,53 @@ const thambList: { id: number, img: string | StaticImageData }[] = [
     { id: 4, img: thambImg2 },
     { id: 5, img: thambImg3 },
 ]
-const mainSliderData: MainSliderItem[] = [
-    {
-        id: 1,
-        title: `2025 Toyota Corolla Preview What's Coming Next Car`,
-        image: mainSlideImg1,
-        description: `The Toyota Corolla Hybrid is the
-        high-performance version of the 2 Series 2-door coupé. The first generation of
-        the M2 is the F87 coupé and is powered by turbocharged.`,
-        videoUrl: `https://www.youtube.com/watch?v=Get7rqXYrbQ`,
-        lists: [
-            { icon: "fas fa-map-marker-alt", text: "Las Vegas, USA" },
-            { icon: "fas fa-map-marked-alt", text: "Show on map" },
-            { icon: "fas fa-map", text: "Las Vegas, USA", modle: `BMW-4525` },
-        ]
-    },
-    {
-        id: 2,
-        title: `2025 Toyota Corolla Preview What's Coming Next Car`,
-        image: mainSlideImg2,
-        description: `The Toyota Corolla Hybrid is the
-        high-performance version of the 2 Series 2-door coupé. The first generation of
-        the M2 is the F87 coupé and is powered by turbocharged.`,
-        videoUrl: `https://www.youtube.com/watch?v=Get7rqXYrbQ`,
-        lists: [
-            { icon: "fas fa-map-marker-alt", text: "Las Vegas, USA" },
-            { icon: "fas fa-map-marked-alt", text: "Show on map" },
-            { icon: "fas fa-map", text: "Las Vegas, USA", modle: `BMW-4525` },
-        ]
-    },
-    {
-        id: 3,
-        title: `2025 Toyota Corolla Preview What's Coming Next Car`,
-        image: mainSlideImg3,
-        description: `The Toyota Corolla Hybrid is the
-        high-performance version of the 2 Series 2-door coupé. The first generation of
-        the M2 is the F87 coupé and is powered by turbocharged.`,
-        videoUrl: `https://www.youtube.com/watch?v=Get7rqXYrbQ`,
-        lists: [
-            { icon: "fas fa-map-marker-alt", text: "Las Vegas, USA" },
-            { icon: "fas fa-map-marked-alt", text: "Show on map" },
-            { icon: "fas fa-map", text: "Las Vegas, USA", modle: `BMW-4525` },
-        ]
-    },
 
-]
-const ListingSliders: React.FC = () => {
+const ListingSliders: React.FC<ListingSlidersProps> = ({ carId }) => {  // ✅ Added prop
+    const car = listingData.find(item => item.id === parseInt(carId));  // ✅ Added
+
     const { handleVideoClick } = useGorentContext();
     const [swiperInstance, setSwiperInstance] = useState<SwiperType | null>(null);
+
+    // ✅ Dynamic data based on carId
+    const mainSliderData: MainSliderItem[] = [
+        {
+            id: 1,
+            title: `${car?.title || 'Car'} Preview`,
+            image: car?.image || mainSlideImg1,
+            description: `The ${car?.brand || ''} ${car?.title || ''} is a high-performance vehicle with ${car?.transmission || ''} transmission and ${car?.fuel || ''} fuel type.`,
+            videoUrl: `https://www.youtube.com/watch?v=Get7rqXYrbQ`,
+            lists: [
+                { icon: "fas fa-map-marker-alt", text: "Las Vegas, USA" },
+                { icon: "fas fa-map-marked-alt", text: "Show on map" },
+                { icon: "fas fa-map", text: "Las Vegas, USA", modle: car?.brand || 'N/A' },
+            ]
+        },
+        {
+            id: 2,
+            title: `${car?.title || 'Car'} Interior`,
+            image: mainSlideImg2,
+            description: `Premium interior features with advanced technology and comfort for ${car?.persons || '5'} passengers.`,
+            videoUrl: `https://www.youtube.com/watch?v=Get7rqXYrbQ`,
+            lists: [
+                { icon: "fas fa-map-marker-alt", text: "Las Vegas, USA" },
+                { icon: "fas fa-map-marked-alt", text: "Show on map" },
+                { icon: "fas fa-map", text: "Las Vegas, USA", modle: car?.brand || 'N/A' },
+            ]
+        },
+        {
+            id: 3,
+            title: `${car?.title || 'Car'} Exterior`,
+            image: mainSlideImg3,
+            description: `Sleek exterior design with aerodynamic efficiency and modern styling.`,
+            videoUrl: `https://www.youtube.com/watch?v=Get7rqXYrbQ`,
+            lists: [
+                { icon: "fas fa-map-marker-alt", text: "Las Vegas, USA" },
+                { icon: "fas fa-map-marked-alt", text: "Show on map" },
+                { icon: "fas fa-map", text: "Las Vegas, USA", modle: car?.brand || 'N/A' },
+            ]
+        },
+    ];
+
     return (
         <div className="listing-single__inner">
             <div className="listing-single__main-content">

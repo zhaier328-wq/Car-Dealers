@@ -1,11 +1,26 @@
 import React from 'react';
+import { listingData } from '@/all-content/listing/Lictingdata';
 
-const ListingTop: React.FC = () => {
+interface ListingTopProps {
+    carId: string;
+}
+
+const ListingTop: React.FC<ListingTopProps> = ({ carId }) => {
+    const car = listingData.find(item => item.id === parseInt(carId));
+
+    if (!car) {
+        return (
+            <div className="listing-single__top">
+                <h3 className="listing-single__title">Car Not Found</h3>
+            </div>
+        );
+    }
+
     return (
         <div className="listing-single__top">
             <div className="listing-single__top-left">
-                <h3 className="listing-single__title">Acura Sport Version</h3>
-                <p className="listing-single__sub-title">4.0 D5 PowerPulse Momentum 5dr AWD Geartronic Estate</p>
+                <h3 className="listing-single__title">{car.title}</h3>  {/* ✅ Dynamic */}
+                <p className="listing-single__sub-title">{car.brand} — {car.transmission} Transmission</p>  {/* ✅ Dynamic */}
                 <div className="listing-single__car-details-box">
                     <ul className="list-unstyled listing-single__car-details">
                         <li>
@@ -14,21 +29,21 @@ const ListingTop: React.FC = () => {
                         </li>
                         <li>
                             <span className="icon-mileage"></span>
-                            <p>80 Miles</p>
+                            <p>{car.mileage}</p>  {/* ✅ Dynamic */}
                         </li>
                         <li>
                             <span className="icon-Carrier"></span>
-                            <p>Automatic</p>
+                            <p>{car.transmission}</p>  {/* ✅ Dynamic */}
                         </li>
                         <li>
                             <span className="icon-fuel-type"></span>
-                            <p>Petrol</p>
+                            <p>{car.fuel}</p>  {/* ✅ Dynamic */}
                         </li>
                     </ul>
                     <ul className="list-unstyled listing-single__car-details">
                         <li>
                             <span className="icon-seat"></span>
-                            <p>7 seats</p>
+                            <p>{car.persons} seats</p>  {/* ✅ Dynamic */}
                         </li>
                         <li>
                             <span className="icon-door"></span>
@@ -40,7 +55,7 @@ const ListingTop: React.FC = () => {
                         </li>
                         <li>
                             <span className="icon-car-insurance"></span>
-                            <p>3 Large bags</p>
+                            <p>{car.package} Package</p>  {/* ✅ Dynamic */}
                         </li>
                     </ul>
                 </div>
@@ -51,13 +66,13 @@ const ListingTop: React.FC = () => {
                     <a href="#">Save <span className="icon-bookmark"></span> </a>
                     <a href="#">Compare <span className="icon-compress"></span> </a>
                 </div>
-                <h2 className="listing-single__price">$150,000</h2>
+                <h2 className="listing-single__price">${car.pricePerDay}/day</h2>  {/* ✅ Dynamic */}
                 <div className="listing-single__offer-price">
                     <div className="icon">
                         <span className="icon-tag-2"></span>
                     </div>
                     <div className="text">
-                        <p>Make An Offer Price</p>
+                        <p>Min Age: {car.minAge}</p>  {/* ✅ Dynamic */}
                     </div>
                 </div>
             </div>
