@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
-import aboutImgOne from "../../../public/assets/images/resources/about-one-img-1.jpg";
-import aboutImgTwo from "../../../public/assets/images/resources/about-one-img-2.jpg";
+import aboutImgOne from "../../../public/assets/images/resources/about-one-img-1.jpeg";
+import aboutImgTwo from "../../../public/assets/images/resources/about-one-img-2.jpeg";
 import shapeOne from "../../../public/assets/images/shapes/about-one-shape-1.png";
 import shapeTwo from "../../../public/assets/images/shapes/about-one-shape-2.png";
 import shapeThree from "../../../public/assets/images/shapes/about-one-shape-3.png";

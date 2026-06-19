@@ -4,16 +4,18 @@ import Header from '@/sections/common/Header';
 import StrickyHeader from '@/sections/common/StrickyHeader';
 import React from 'react';
 
-const layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-    return (
-        <div className='page-wrapper'>
-            <Header />
-            {children}
-            <Gallery />
-            <Footer />
-            <StrickyHeader />
-        </div>
-    );
-};
-
-export default layout;
+export default function InnerLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <div className='page-wrapper'>
+      <Header />
+      {children}
+      <Gallery />
+      <Footer />
+      <StrickyHeader />
+    </div>
+  );
+}
