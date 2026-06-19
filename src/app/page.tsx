@@ -20,27 +20,31 @@ import TestimonialOne from '../sections/home-one/TestimonialOne';
 import VideoOne from '../sections/home-one/VideoOne';
 import WhychooseOne from '../sections/home-one/WhychooseOne';
 import React from 'react';
+import SearchSection from '../sections/common/Search';
+import WelcomeSection from '../sections/common/Welcome';
 
 const page: React.FC = () => {
   return (
     <div className='page-wrapper'>
       <Header />
       <BannerOne />
-      <SlidingText />
-      <ServiceOne />
-      <AboutOne />
+       <BrandOne />
+         <SearchSection />
+        <ListingOne />
+  <WelcomeSection />
+        <AboutOne />
+         <WhychooseOne />
+           <TestimonialOne /> 
+            <Gallery />
+             <FaqOne />
+              <OurBlog />
+
+      {/* <ServiceOne /> 
+           <SlidingText />    
       <ProcessOne />
-      <WhychooseOne />
-      <ListingOne />
       <VideoOne />
+     <LetsTalk />  */}
      
-      <TestimonialOne />
-      <FaqOne />
-      <LetsTalk />
-      
-      <BrandOne />
-      <OurBlog />
-      <Gallery />
       <Footer />
       <StrickyHeader />
     </div>
