@@ -1,6 +1,6 @@
 "use client"
 import React, { useState } from "react";
-import faqImg from "../../../public/assets/images/resources/faq-one-img-1.jpg";
+import faqImg from "../../../public/assets/images/resources/faq-one-img-1.jpeg";
 import sectionShape from "../../../public/assets/images/shapes/section-title-tagline-shape-1.png"; 
 import { motion } from "framer-motion"  
 import Image from "next/image";

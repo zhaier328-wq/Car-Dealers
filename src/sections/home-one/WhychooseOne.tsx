@@ -28,8 +28,8 @@ const WhychooseOne: React.FC = () => {
                             <span className="section-title__tagline">Why Choose Us</span>
                         </div>
                         <h2 className="section-title__title title-animation">
-                            <TextAnimation text="We are innovative and passionate" />
-                            <TextAnimation text="about the work we do." />
+                            <TextAnimation text="Delivering Quality Japanese " />
+                            <TextAnimation text="Cars with Confidence" />
                         </h2>
                     </div>
                     <div className="row">

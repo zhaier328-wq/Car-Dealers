@@ -1,30 +1,42 @@
 import type { CounterItem, WhyChooseItem } from "./chooseType";
 
 export const whyChooseData: WhyChooseItem[] = [
-    {
-        id: 1,
-        icon: "icon-range",
-        title: "Easy & Fast Booking",
-        text: `Car service is essential for maintaining performance and
-        longevity of vehicle. From oil changes. Dominion fowe there light she does lights
-        begining subdue.`,
-    },
-    {
-        id: 2,
-        icon: "icon-car-insurance",
-        title: "Many Pickup Location",
-        text: `Car service is essential for maintaining performance and
-        longevity of vehicle. From oil changes. Dominion fowe there light she does lights
-        begining subdue.`,
-    },
-    {
-        id: 3,
-        icon: "icon-rating",
-        title: "Customer Satisfaction",
-        text: `Car service is essential for maintaining performance and
-        longevity of vehicle. From oil changes. Dominion fowe there light she does lights
-        begining subdue.`,
-    },
+  {
+    id: 1,
+    icon: "icon-car-insurance",
+    title: "Finance Options",
+    text: `We provide flexible car finance solutions to make owning your vehicle easy and affordable.`,
+  },
+  {
+    id: 2,
+    icon: "icon-range",
+    title: "End-to-End Import Support",
+    text: `From vehicle sourcing and inspections to shipping, compliance, and delivery, our team handles the entire process.`,
+  },
+  {
+    id: 3,
+    icon: "icon-rating",
+    title: "Quality Inspected Vehicles",
+    text: `Every vehicle is carefully reviewed to ensure it meets our quality standards before purchase and export.`,
+  },
+  {
+    id: 4,
+    icon: "icon-pin-2",
+    title: "Local Support in Australia",
+    text: `Serving customers across Brisbane and Melbourne with reliable communication and ongoing assistance.`,
+  },
+  {
+    id: 5,
+    icon: "icon-car",
+    title: "Trusted Industry Experience",
+    text: `Our experience in Japanese vehicle sourcing helps customers buy with confidence and peace of mind.`,
+  },
+  {
+    id: 6,
+    icon: "icon-mileage",
+    title: "Competitive Wholesale Pricing",
+    text: `We help customers and dealers secure Japanese cars at competitive prices without unnecessary middlemen.`,
+  },
 ];
 
 export const counterData: CounterItem[] = [

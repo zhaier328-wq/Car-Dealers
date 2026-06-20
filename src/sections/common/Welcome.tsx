@@ -112,11 +112,11 @@ const WelcomeSection: React.FC = () => {
                 lineHeight: 1.2,
               }}
             >
-              Welcome to <span style={{ color: "#F5B818" }}>UKA Japan Motors</span>
+              About  <span style={{ color: "#F5B818" }}>UKA Japan Motors</span>
             </h2>
 
             {/* Subheading */}
-            <p
+            <h2
               style={{
                 fontSize: "14px",
                 fontWeight: 600,
@@ -127,8 +127,8 @@ const WelcomeSection: React.FC = () => {
                 lineHeight: 1.5,
               }}
             >
-              Most Trusted Dealer for Japanese Import Cars in Melbourne, Australia
-            </p>
+             Your Trusted Source for Japanese Cars in Australia
+            </h2>
 
             {/* Decorative Line */}
             <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "12px" }}>
@@ -168,20 +168,32 @@ const WelcomeSection: React.FC = () => {
           >
             <div style={{ display: "flex", flexDirection: "column", gap: "18px" }}>
               <p style={{ fontSize: "14px", lineHeight: 1.8, color: "#555", margin: 0 }}>
-                Are you searching for reliable Japanese import cars in Australia? UKA Japan Motors has you sorted. With over 25 years in the industry, we specialise in importing high-quality JDM cars directly from Japan. As direct importers, we handle high-volume shipping from Japan and processing in Australia, which means no intermediate third party and more competitive prices.
-              </p>
+              UKA Japan Motors is a trusted name for Japanese cars in Australia, helping customers across Melbourne, Brisbane, and surrounding
+areas find quality vehicles at competitive prices. With years of experience in the automotive industry, we specialise in sourcing and supplying
+reliable Japanese import cars Australia drivers can depend on.As direct importers, we work closely with trusted Japanese auctions,
+dealerships, and suppliers to provide access to a wide range of vehicles. Whether you are looking for Japanese cars for sale, fuel-efficient
+Japanese small cars, family SUVs, commercial vehicles, or performance models, our team is committed to helping you find the right vehicle
+for your needs and budget. We make the process of importing cars to Australia simple and hassle free. From vehicle sourcing and inspections
+to shipping, compliance, and delivery, our experienced team manages every stage of the import process   </p>
 
               <p style={{ fontSize: "14px", lineHeight: 1.8, color: "#555", margin: 0 }}>
-                Our used car dealership in Australia offers credible wholesale deals, easy trade-ins, and a trusted range of Japanese used cars Melbourne, Australia that suit every budget. You also get access to flexible used car finance options and solid warranty coverage, which provide you assurance for the long run.We sell both low and high budget imports. UKA Japan Motors has a range of used cars under $15000. For drivers interested in premium used cars, we also have quality used cars under $50,000.
-              </p>
+           Customer satisfaction is at the heart of everything we do. Every vehicle is carefully selected and inspected to maintain our high standards of
+quality and reliability. We also provide guidance regarding Japanese import car insurance Australia options and other important ownership
+requirements.     </p>
 
               <p style={{ fontSize: "14px", lineHeight: 1.8, color: "#555", margin: 0 }}>
-                Our imports are compliant with Australian law and come with an Export Certificate as well as a Japanese Auction Sheet to verify maintenance records and kilometres travelled. To make buying and selling Japanese import cars easier, we also offer a car trade-in option. For this, first we'll evaluate your used car and then offer the pricing for the vehicle. After that, you can decide to exchange your vehicle for a similarly priced Japanese used car Melbourne. When you visit our Japanese import car dealership in Melbourne, Australia, our team provides complete guidance and freedom to inspect the vehicle properly. We also provide assistance about arranging relevant documentation and car financing options to buy your dream car.
-              </p>
+            At UKA Japan Motors, we are proud to help Australian drivers access quality Japanese import cars at affordable prices. Whether you're
+buying your first imported vehicle or expanding your collection, our team is ready to help you every step of the way.
+
+
+In addition to vehicle sourcing, We provide flexible car finance options for easy car ownership, helping customers easily secure affordable
+payment options. We also support with warranty options, after-sales service, insurance guidance, and test drive facility to ensure a smooth
+and stress-free buying experience.     </p>
 
               <p style={{ fontSize: "14px", lineHeight: 1.8, color: "#555", margin: 0 }}>
-                To explore current stock or discover our latest offers, visit our Brisbane or Mordialloc used car dealership in Australia today.
-              </p>
+              At UKA Japan, we make Japanese import cars in Australia more accessible through simple and flexible financing solutions.
+
+  </p>
             </div>
 
             {/* CTA */}
