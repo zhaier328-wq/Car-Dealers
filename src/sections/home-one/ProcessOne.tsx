@@ -2,7 +2,6 @@
 import React from "react";
 import { motion } from "framer-motion"
 import Image from "next/image";
-import sectionTitleShape from "../../../public/assets/images/shapes/section-title-tagline-shape-1.png";
 import TextAnimation from "@/components/elements/TextAnimation";
 import { processSteps } from "@/all-content/process/prosessdata";
 import { ProcessStep } from "@/all-content/process/prosessType";
@@ -12,12 +11,7 @@ const ProcessOne: React.FC = () => {
         <section className="process-one">
             <div className="container">
                 <div className="section-title text-center sec-title-animation animation-style2">
-                    <div className="section-title__tagline-box justify-content-center">
-                        <div className="section-title__tagline-shape">
-                            <Image src={sectionTitleShape} width={70} height={21} alt="shape" />
-                        </div>
-                        <span className="section-title__tagline">Steps</span>
-                    </div>
+                   
                     <h2 className="section-title__title title-animation">
                         <TextAnimation text="Car Rental Process" />
                     </h2>

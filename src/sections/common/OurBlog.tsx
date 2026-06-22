@@ -1,6 +1,5 @@
 "use client"
 import React, { useState } from "react";
-import sectionShape from "../../../public/assets/images/shapes/section-title-tagline-shape-1.png";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import type { Swiper as SwiperType } from 'swiper';
 import { Autoplay, Navigation } from 'swiper/modules';
@@ -19,12 +18,7 @@ const OurBlog: React.FC = () => {
             <div className="container">
                 {/* Section Title */}
                 <div className="section-title text-left sec-title-animation animation-style2">
-                    <div className="section-title__tagline-box">
-                        <div className="section-title__tagline-shape">
-                            <Image src={sectionShape} width={70} height={21} alt="shape" />
-                        </div>
-                        <span className="section-title__tagline">Our Blog</span>
-                    </div>
+                   
                     <h2 className="section-title__title title-animation">
                         <TextAnimation text="Our Latest Blog" />
                     </h2>

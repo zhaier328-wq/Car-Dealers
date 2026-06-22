@@ -22,7 +22,7 @@ const featureItems: FeatureItem[] = [
         title: "Do You Want to \nRent a Car ?",
         description:
             "Lorem ipsum is simply ipun txns mane so dummy text of free available in market the printing and typesetting industry",
-        buttonText: "Rent Now",
+        buttonText: "Get Started",
         link: "/inner/car-list-v-1",
     },
 ];

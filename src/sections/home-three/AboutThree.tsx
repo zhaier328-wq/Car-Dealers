@@ -32,11 +32,11 @@ const AboutThree: React.FC = () => {
                                         <Image src={taglineShape} width={70} height={21} alt="Tagline Shape" />
                                     </div>
                                     <span className="section-title__tagline">
-                                        About Gorent
+                                        About UKA Japan
                                     </span>
                                 </div>
                                 <h2 className="section-title__title title-animation">
-                                    <TextAnimation text='Welcome to Gorent'/>
+                                    <TextAnimation text='Welcome to UKA Japan'/>
                                      <TextAnimation text='car booking company'/>                                   
                                 </h2>
                             </div>

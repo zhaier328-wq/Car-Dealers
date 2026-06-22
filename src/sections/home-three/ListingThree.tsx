@@ -18,14 +18,7 @@ const ListingThree: React.FC = () => {
             <div className="container">
                 {/* Section Title */}
                 <div className="section-title text-left sec-title-animation animation-style1">
-                    <div className="section-title__tagline-box">
-                        <div className="section-title__tagline-shape">
-                            <Image src={taglineShape} width={70} height={21} alt="Tagline Shape" />
-                        </div>
-                        <span className="section-title__tagline">
-                            Checkout our new cars
-                        </span>
-                    </div>
+                   
                     <h2 className="section-title__title title-animation">
                         <TextAnimation text='Explore Most Popular Cars'/>
                     </h2>

@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion" 
-import sectionTitleShape from "../../../public/assets/images/shapes/section-title-tagline-shape-1.png"; 
 import Image from "next/image";
 import TextAnimation from "@/components/elements/TextAnimation";
 import { processSteps } from "@/all-content/process/prosessdata";
@@ -13,12 +12,7 @@ const ProcessThree: React.FC = () => {
         <section className="process-one process-three">
             <div className="container">
                 <div className="section-title text-center sec-title-animation animation-style2">
-                    <div className="section-title__tagline-box justify-content-center">
-                        <div className="section-title__tagline-shape">
-                            <Image src={sectionTitleShape} width={70} height={21} alt="shape" />
-                        </div>
-                        <span className="section-title__tagline">Steps</span>
-                    </div>
+                  
                     <h2 className="section-title__title title-animation">
                         <TextAnimation text="Car Rental Process" />
                     </h2>

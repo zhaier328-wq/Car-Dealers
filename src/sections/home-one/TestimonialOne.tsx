@@ -7,7 +7,6 @@ import React, { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import type { Swiper as SwiperType } from 'swiper'; 
 import { Autoplay, Navigation } from 'swiper/modules';
-import sectionTitleShape from "../../../public/assets/images/shapes/section-title-tagline-shape-1.png";
 import Image from 'next/image';
 import TextAnimation from '@/components/elements/TextAnimation';
 import { testimonialData } from '@/all-content/testimonials/testimonialsData';
@@ -20,15 +19,10 @@ const TestimonialOne: React.FC = () => {
         <section className="testimonial-one" id='testimonial'>
             <div className="container">
                 <div className="section-title text-left sec-title-animation animation-style2">
-                    <div className="section-title__tagline-box">
-                        <div className="section-title__tagline-shape">
-                            <Image src={sectionTitleShape} width={70} height={21} alt="Image" />
-                        </div>
-                        <span className="section-title__tagline">Our Testimonial</span>
-                    </div>
+                  
                     <h2 className="section-title__title title-animation">
                         <TextAnimation text='What Peoples Say' />
-                        <TextAnimation text=' about Gorent' />
+                        <TextAnimation text=' about UKA Japan' />
                     </h2>
                 </div>
                 <div className="testimonial-one__carousel owl-theme owl-carousel">

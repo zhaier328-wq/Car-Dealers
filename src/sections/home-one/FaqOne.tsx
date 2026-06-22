@@ -1,7 +1,6 @@
 "use client"
 import React, { useState } from "react";
 import faqImg from "../../../public/assets/images/resources/faq-one-img-1.jpeg";
-import sectionShape from "../../../public/assets/images/shapes/section-title-tagline-shape-1.png"; 
 import { motion } from "framer-motion"  
 import Image from "next/image";
 import TextAnimation from "@/components/elements/TextAnimation";
@@ -20,12 +19,7 @@ const FaqOne: React.FC = () => {
                     <div className="col-xl-6 col-lg-5">
                         <div className="faq-one__left">
                             <div className="section-title text-left sec-title-animation animation-style2">
-                                <div className="section-title__tagline-box">
-                                    <div className="section-title__tagline-shape">
-                                        <Image src={sectionShape} width={70} height={21} alt="shape" />
-                                    </div>
-                                    <span className="section-title__tagline">Our Faqs</span>
-                                </div>
+                               
                                 <h2 className="section-title__title title-animation">
                                     <TextAnimation text="Frequently Asking Any" />
                                     <TextAnimation text="Question" />

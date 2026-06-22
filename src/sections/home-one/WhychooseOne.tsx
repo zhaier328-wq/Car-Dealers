@@ -1,7 +1,6 @@
 "use client"
 import React from "react"; 
 import { motion } from "framer-motion" 
-import sectionTitleShape from "../../../public/assets/images/shapes/section-title-tagline-shape-1.png";
 import counterImg1 from "../../../public/assets/images/resources/counter-one-img-1.jpg";
 import counterImg2 from "../../../public/assets/images/resources/counter-one-img-2.jpg";
 import counterDot1 from "../../../public/assets/images/shapes/counter-one-dot-1.png";
@@ -21,12 +20,7 @@ const WhychooseOne: React.FC = () => {
                 <div className="why-choose-one__shape-2"></div>
                 <div className="container">
                     <div className="section-title text-center sec-title-animation animation-style2">
-                        <div className="section-title__tagline-box justify-content-center">
-                            <div className="section-title__tagline-shape">
-                                <Image src={sectionTitleShape} width={70} height={21} loading="eager" alt="" />
-                            </div>
-                            <span className="section-title__tagline">Why Choose Us</span>
-                        </div>
+                      
                         <h2 className="section-title__title title-animation">
                             <TextAnimation text="Delivering Quality Japanese " />
                             <TextAnimation text="Cars with Confidence" />
@@ -52,7 +46,7 @@ const WhychooseOne: React.FC = () => {
                                         <p className="why-choose-one__text">{item?.text} </p>
                                     </div>
                                     <div className="why-choose-one__btn-box">
-                                        <Link href={"/inner/listing-single"} className="thm-btn"> Rent Now<span className="fas fa-arrow-right"></span> </Link>
+                                        <Link href={"/inner/listing-single"} className="thm-btn"> Get Started<span className="fas fa-arrow-right"></span> </Link>
                                     </div>
                                 </div>
                             </motion.div>)
@@ -60,7 +54,7 @@ const WhychooseOne: React.FC = () => {
                     </div>
                 </div>
             </section>
-            <section className="counter-one">
+            {/* <section className="counter-one">
                 <div className="container">
                     <div className="row">
                         <div className="col-xl-6">
@@ -139,7 +133,7 @@ const WhychooseOne: React.FC = () => {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> */}
         </>
     );
 };

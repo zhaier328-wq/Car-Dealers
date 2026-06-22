@@ -20,6 +20,7 @@ import ProcessOne from '../sections/home-one/ProcessOne';
 import ServiceOne from '../sections/home-one/ServiceOne';
 import TeamOne from '../sections/home-one/TeamOne';
 import TestimonialOne from '../sections/home-one/TestimonialOne';
+import VideoTestimonial from '../sections/home-one/VideoTestimonial';
 import VideoOne from '../sections/home-one/VideoOne';
 import WhychooseOne from '../sections/home-one/WhychooseOne';
 import SearchSection from '../sections/common/Search';
@@ -65,7 +66,7 @@ const Page: React.FC = () => {
       <WelcomeSection />
       <AboutOne />
       <WhychooseOne />
-      <TestimonialOne />
+      <VideoTestimonial />
       <Gallery />
       <FaqOne />
       <OurBlog />

@@ -3,7 +3,9 @@ import React from 'react';
 import { motion } from "framer-motion"
 import Link from 'next/link';
 import footerLogo from "../../../public/assets/images/resources/footer-logo.png"
+
 import Image from 'next/image';
+import LocationTabs from './LocationTabs';
 interface LinkItem {
     id: number;
     link: string;
@@ -33,7 +35,10 @@ const Footer: React.FC = () => {
         e.currentTarget.reset();
     }
     return (
+
+        
         <footer className="site-footer">
+            <LocationTabs />
             <div className="site-footer__bg"></div>
             <div className="site-footer__top">
                 <div className="container">
@@ -152,7 +157,7 @@ const Footer: React.FC = () => {
                             <div className="site-footer__bottom-inner">
                                 <div className="site-footer__copyright">
                                     <p className="site-footer__copyright-text">
-                                        © 2026 Gorent By
+                                        © 2026 UKA Japan By
                                         <a href="https://themeforest.net/user/dreamlayout"> Dreamlayout. </a>
                                         All
                                         Rights

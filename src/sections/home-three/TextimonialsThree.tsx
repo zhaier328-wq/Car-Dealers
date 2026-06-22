@@ -30,7 +30,7 @@ const TestimonialsThree: React.FC = () => {
                                 </div>
                                 <h2 className="section-title__title title-animation">
                                     <TextAnimation text='What Peoples Say' />
-                                    <TextAnimation text='about Gorent' />
+                                    <TextAnimation text='about UKA Japan' />
                                 </h2>
                             </div>
                         </div>

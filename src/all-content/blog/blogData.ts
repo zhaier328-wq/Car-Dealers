@@ -182,7 +182,7 @@ export const blogStandardListData: BlogStandardItem[] = [
         author: "Admin",
         comments: 5,
         readTime: "4 Min Read",
-        title: "Experience freedom on our Gorent booking service",
+        title: "Experience freedom on our UKA Japan booking service",
         description:
             "Out enigma ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute inure dolor in the reprehenderit in voluptate velit esse cillum dolore eu fugiat null pariatur.",
         link: "/inner/blog-details",
@@ -228,7 +228,7 @@ export const blogStandardListData: BlogStandardItem[] = [
         author: "Admin",
         comments: 5,
         readTime: "4 Min Read",
-        title: "Experience freedom on our Gorent booking service",
+        title: "Experience freedom on our UKA Japan booking service",
         description:
             "Out enigma ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute inure dolor in the reprehenderit in voluptate velit esse cillum dolore eu fugiat null pariatur.",
         link: "/inner/blog-details",

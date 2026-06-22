@@ -6,7 +6,6 @@ import shapeOne from "../../../public/assets/images/shapes/about-one-shape-1.png
 import shapeTwo from "../../../public/assets/images/shapes/about-one-shape-2.png";
 import shapeThree from "../../../public/assets/images/shapes/about-one-shape-3.png";
 import shapeFour from "../../../public/assets/images/shapes/about-one-shape-4.png";
-import sectionTitleShape from "../../../public/assets/images/shapes/section-title-tagline-shape-1.png"; 
 import { motion } from "framer-motion";
 import Image from "next/image";
 import AdvanceCountUp from "@/components/elements/AdvanceCountUp";
@@ -74,17 +73,10 @@ const AboutInner: React.FC = () => {
           <div className="col-xl-6">
             <div className="about-one__right">
               <div className="section-title text-left sec-title-animation animation-style1">
-                <div className="section-title__tagline-box">
-                  <div className="section-title__tagline-shape">
-                    <Image src={sectionTitleShape} width={70} height={21} alt="shape" />
-                  </div>
-                  <span className="section-title__tagline">
-                    About Gorent
-                  </span>
-                </div>
+               
 
                 <h2 className="section-title__title title-animation">
-                  <TextAnimation text="Welcome to Gorent" />
+                  <TextAnimation text="Welcome to UKA Japan" />
                   <TextAnimation text="car booking company" />
                 </h2>
               </div>

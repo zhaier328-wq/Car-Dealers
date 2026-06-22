@@ -69,7 +69,7 @@ const PricingThree: React.FC = () => {
                                     </ul>
                                     <div className="pricing-two__btn-box">
                                         <Link href="/inner/pricing" className="thm-btn" >
-                                            Rent Now
+                                            Get Started
                                             <span className="fas fa-arrow-right"></span>
                                         </Link>
                                     </div>

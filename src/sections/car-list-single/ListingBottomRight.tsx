@@ -87,7 +87,7 @@ const ListingBottomRight: React.FC<ListingBottomRightProps> = ({ carId }) => {  
                         </div>
                     </div>
                     <div className="listing-single__btn-box-2">
-                        <a href="#" className="thm-btn">Rent Now<span className="fas fa-arrow-right"></span></a>
+                        <a href="#" className="thm-btn">Get Started<span className="fas fa-arrow-right"></span></a>
                     </div>
                 </div>
                 <div className="listing-single__contact-info listing-single__single-box">

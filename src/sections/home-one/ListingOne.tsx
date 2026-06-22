@@ -5,7 +5,6 @@ import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import { listingData } from '@/all-content/listing/Lictingdata';
 import { ListingItem } from '@/all-content/listing/listType';
 import TextAnimation from '@/components/elements/TextAnimation';
-import titleShape from '../../../public/assets/images/shapes/section-title-tagline-shape-1.png';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -44,12 +43,7 @@ const ListingOne: React.FC<ListingOneProps> = ({ filteredData }) => {  // ✅ Ac
         <section className="listing-one" id='cars'>
             <div className="">
                 <div className="section-title text-center sec-title-animation animation-style1">
-                    <div className="section-title__tagline-box justify-content-center">
-                        <div className="section-title__tagline-shape">
-                            <Image src={titleShape} width={70} height={21} alt="" />
-                        </div>
-                        <span className="section-title__tagline">Checkout our new cars</span>
-                    </div>
+                    
                     <h2 className="section-title__title title-animation"><TextAnimation text='Explore Most Popular Cars' /></h2>
                 </div>
                 <div className="listing-one__tab-box listing-one-tabs-box">

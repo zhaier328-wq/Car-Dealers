@@ -64,7 +64,7 @@ const PricingMain: React.FC = () => {
                                         ))}
                                     </ul>
                                     <div className="pricing-one__btn-box">
-                                        <Link href="/inner/pricing" className="thm-btn">Rent Now<span className="fas fa-arrow-right"></span></Link>
+                                        <Link href="/inner/pricing" className="thm-btn">Get Started<span className="fas fa-arrow-right"></span></Link>
                                     </div>
                                 </div>
                             </motion.div>)
@@ -136,7 +136,7 @@ const PricingMain: React.FC = () => {
 
                                         <div className="pricing-two__btn-box">
                                             <Link href="inner/inner/listing-single" className="thm-btn" >
-                                                Rent Now
+                                                Get Started
                                                 <span className="fas fa-arrow-right"></span>
                                             </Link>
                                         </div>

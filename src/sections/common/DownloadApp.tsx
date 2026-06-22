@@ -20,7 +20,7 @@ const DownloadApp: React.FC = () => {
                             <div className="download-app-one__content sec-title-animation animation-style2">
                                 <p className="download-app-one__sub-title">Download Our App</p>
                                 <h2 className="download-app-one__title title-animation">
-                                    <TextAnimation text='Gorent User Friendly' />
+                                    <TextAnimation text='UKA Japan User Friendly' />
                                     <TextAnimation text='App Available' />
                                 </h2>
                                 <p className="download-app-one__text">Get our mobile app for easy and convenient usage</p>

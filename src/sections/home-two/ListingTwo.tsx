@@ -14,14 +14,7 @@ const ListingTwo: React.FC = () => {
         <section className="listing-two" id='cars'>
             {/* <div className="container"> */}
             <div className="section-title text-center sec-title-animation animation-style1">
-                <div className="section-title__tagline-box justify-content-center">
-                    <div className="section-title__tagline-shape">
-                        <Image src={titleImg} width={70} height={21} alt="Image" />
-                    </div>
-                    <span className="section-title__tagline">
-                        Checkout our new cars
-                    </span>
-                </div>
+                
                 <h2 className="section-title__title title-animation">
                     <TextAnimation text='Explore Most Popular Cars' />
                 </h2>

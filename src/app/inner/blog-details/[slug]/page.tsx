@@ -79,7 +79,7 @@ export default function BlogDetailPage() {
         "image": blog.image,
         "datePublished": blog.createdAt,
         "author": { "@type": "Person", "name": blog.author },
-        "publisher": { "@type": "Organization", "name": "GoRent" },
+        "publisher": { "@type": "Organization", "name": "UKA Japan" },
       })}} />
 
       <section className="blog-details">

@@ -2,7 +2,6 @@
 import React, { useState } from "react"; 
 import shape1 from "../../../public/assets/images/shapes/testimonial-two-shape-1.png";
 import shape2 from "../../../public/assets/images/shapes/testimonial-two-shape-2.png";
-import sectionShape from "../../../public/assets/images/shapes/section-title-tagline-shape-1.png"; 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import type { Swiper as SwiperType } from 'swiper';
 import { Autoplay, Navigation } from 'swiper/modules'; 
@@ -24,16 +23,11 @@ const TestimonianInner: React.FC = () => {
             </div>
             <div className="container">
                 <div className="section-title text-left sec-title-animation animation-style2">
-                    <div className="section-title__tagline-box">
-                        <div className="section-title__tagline-shape">
-                            <Image src={sectionShape} width={70} height={21} alt="Image" />
-                        </div>
-                        <span className="section-title__tagline">Testimonials</span>
-                    </div>
+                  
 
                     <h2 className="section-title__title title-animation">
                         <TextAnimation text="What Peoples Say" />
-                        <TextAnimation text="about Gorent" />
+                        <TextAnimation text="about UKA Japan" />
                     </h2>
                 </div>
                 <div className="testimonial-two__carousel owl-carousel owl-theme">

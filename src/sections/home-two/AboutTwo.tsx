@@ -21,10 +21,10 @@ const AboutTwo: React.FC = () => {
                                     <div className="section-title__tagline-shape">
                                         <Image src={tagLine} width={70} height={21} alt="image" />
                                     </div>
-                                    <span className="section-title__tagline">About Gorent</span>
+                                    <span className="section-title__tagline">About UKA Japan</span>
                                 </div>
                                 <h2 className="section-title__title title-animation">
-                                    <TextAnimation text='Welcome to Gorent' />
+                                    <TextAnimation text='Welcome to UKA Japan' />
                                     <TextAnimation text='car booking company' />
                                 </h2>
                             </div>

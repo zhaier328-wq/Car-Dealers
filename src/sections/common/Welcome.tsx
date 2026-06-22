@@ -81,23 +81,7 @@ const WelcomeSection: React.FC = () => {
             style={{ textAlign: "center", marginBottom: "40px" }}
           >
             {/* Tagline */}
-            <div
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "8px",
-                marginBottom: "16px",
-                padding: "6px 16px",
-                background: "rgba(245, 184, 24, 0.1)",
-                borderRadius: "20px",
-                border: "1px solid rgba(245, 184, 24, 0.2)",
-              }}
-            >
-              <span style={{ width: "6px", height: "6px", background: "#F5B818", borderRadius: "50%" }} />
-              <span style={{ fontSize: "12px", fontWeight: 600, color: "#F5B818", textTransform: "uppercase", letterSpacing: "1.5px" }}>
-                About Us
-              </span>
-            </div>
+          
 
             {/* Main Heading */}
             <h2

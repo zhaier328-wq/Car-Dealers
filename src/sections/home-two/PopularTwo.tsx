@@ -2,7 +2,6 @@
 import React from 'react'; 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation } from 'swiper/modules';
-import sectionShape from "../../../public/assets/images/shapes/section-title-tagline-shape-1.png"; 
 import TextAnimation from '@/components/elements/TextAnimation';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -66,12 +65,7 @@ const PopularTwo: React.FC = () => {
         <section className="popular-car-two">
             <div className="container">
                 <div className="section-title text-center sec-title-animation animation-style1">
-                    <div className="section-title__tagline-box justify-content-center">
-                        <div className="section-title__tagline-shape">
-                            <Image src={sectionShape} width={70} height={21} alt="Image" />
-                        </div>
-                        <span className="section-title__tagline">Popular Car</span>
-                    </div>
+                 
 
                     <h2 className="section-title__title title-animation">
                         <TextAnimation text='Most Popular Cartypes' />
