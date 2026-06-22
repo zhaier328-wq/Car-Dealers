@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Roboto, Inter_Tight } from "next/font/google";
-import "swiper/swiper-bundle.css";
+  
 import "../../public/assets/css/style.css";
 import ContextProvider from "../components/context/ContextProvider";
 import CustomLayout from "../components/custom-layout/CustomLayout";
