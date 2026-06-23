@@ -2,12 +2,12 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
-import brand1 from "../../../public/assets/images/brand/brand-1-1.png";
-import brand2 from "../../../public/assets/images/brand/brand-1-2.png";
-import brand3 from "../../../public/assets/images/brand/brand-1-3.png";
+import brand1 from "../../../public/assets/images/brand/brand-1-1.jpeg";
+import brand2 from "../../../public/assets/images/brand/brand-1-2.jpeg";
+import brand3 from "../../../public/assets/images/brand/brand-1-3.jpeg";
 import brand4 from "../../../public/assets/images/brand/brand-1-4.png";
-import brand5 from "../../../public/assets/images/brand/brand-1-5.png";
-import brand6 from "../../../public/assets/images/brand/brand-1-6.png"; 
+import brand5 from "../../../public/assets/images/brand/brand-1-5.jpeg";
+
 import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 type BrandItem = {
@@ -41,11 +41,7 @@ const brandData: BrandItem[] = [
         image: brand5,
         link: "#",
     },
-    {
-        id: 6,
-        image: brand6,
-        link: "#",
-    },
+   
     {
         id: 7,
         image: brand3,
@@ -98,7 +94,7 @@ const BrandOne: React.FC = () => {
                                     <div className="brand-one__single">
                                         <div className="brand-one__img">
                                             <Link href={brand.link}>
-                                                <Image src={brand.image} width={155} height={30} alt={`brand-${brand.id}`} />
+                                                <Image src={brand.image} width={130} height={130} alt={`brand-${brand.id}`} />
                                             </Link>
                                         </div>
                                     </div>

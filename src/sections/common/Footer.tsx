@@ -11,21 +11,22 @@ interface LinkItem {
     link: string;
     title: string;
 }
-
 const linkOne: LinkItem[] = [
-    { id: 1, link: "/inner/about", title: "About Us" },
-    { id: 2, link: "/inner/services", title: "Our Services" },
-    { id: 3, link: "/inner/drivers", title: "Our Drivers" },
-    { id: 4, link: "/inner/blog", title: "Our Blog" },
-    { id: 5, link: "/inner/contact", title: "Contact Us" }
+    { id: 1, link: "/inner/drivers", title: "View Stock" },
+    { id: 2, link: "/inner/services", title: "Finance" },
+    { id: 3, link: "/inner/car-list-v-1", title: "Trade In" },
+    { id: 4, link: "/inner/services", title: "Warranty" },
+    { id: 5, link: "/inner/blog", title: "Blog" },
+    { id: 6, link: "/inner/about", title: "Reviews" }
 ];
+
 const linkTwo: LinkItem[] = [
-    { id: 1, link: "/inner/car-list-v-1", title: "Your Reliable Ride" },
-    { id: 2, link: "/inner/car-list-v-2", title: "Express Shuttle" },
-    { id: 3, link: "/inner/car-list-v-3", title: "Travel in Style" },
-    { id: 4, link: "/inner/cars", title: "Rental List" },
-    { id: 5, link: "/inner/listing-single", title: "Dash Transport" },
-]
+    { id: 1, link: "tel:+1234567890", title: "Phone" },
+    { id: 2, link: "https://linkedin.com", title: "LinkedIn" },
+    { id: 3, link: "https://facebook.com", title: "Facebook" },
+    { id: 4, link: "https://instagram.com", title: "Instagram" },
+    { id: 5, link: "https://youtube.com", title: "YouTube" }
+];
 
 const Footer: React.FC = () => {
 
@@ -113,7 +114,7 @@ const Footer: React.FC = () => {
                                             <div className="icon">
                                                 <span className="icon-pin"></span>
                                             </div>
-                                            <p>205 Ballarat Rd,Maidstone <br /> VIC 3012 </p>
+                                            <p>Our Locations </p>
                                         </motion.li>
                                         <motion.li
                                             initial={{ x: 40, opacity: 0 }}
@@ -127,7 +128,7 @@ const Footer: React.FC = () => {
                                             <div className="icon">
                                                 <span className="icon-call"></span>
                                             </div>
-                                            <p><a href="tel:2195550114">03 4329 0786</a></p>
+                                            <p><a href="tel:2195550114">+1800 006 265</a></p>
                                         </motion.li>
                                         <motion.li
                                             initial={{ x: 40, opacity: 0 }}
@@ -141,7 +142,7 @@ const Footer: React.FC = () => {
                                             <div className="icon">
                                                 <span className="icon-envelope"></span>
                                             </div>
-                                            <p><a href="mailto:sales.maidstone@ukajapan.com.au">sales.maidstone@ukajapan.com.au</a></p>
+                                            <p><a href="mailto:sales.maidstone@ukajapan.com.au">info@ukajapan.com.au</a></p>
                                         </motion.li>
                                     </ul>
                                 </div>

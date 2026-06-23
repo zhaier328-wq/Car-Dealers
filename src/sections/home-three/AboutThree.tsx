@@ -36,8 +36,8 @@ const AboutThree: React.FC = () => {
                                     </span>
                                 </div>
                                 <h2 className="section-title__title title-animation">
-                                    <TextAnimation text='Welcome to UKA Japan'/>
-                                     <TextAnimation text='car booking company'/>                                   
+                                     <TextAnimation text="Welcome to UKA " />
+                  <TextAnimation text="JAPAN MOTORS" />                                 
                                 </h2>
                             </div>
 

@@ -76,8 +76,8 @@ const AboutInner: React.FC = () => {
                
 
                 <h2 className="section-title__title title-animation">
-                  <TextAnimation text="Welcome to UKA Japan" />
-                  <TextAnimation text="car booking company" />
+                  <TextAnimation text="Welcome to UKA JAPAN" />
+                  <TextAnimation text="MOTORS" />
                 </h2>
               </div>
 
@@ -93,8 +93,8 @@ const AboutInner: React.FC = () => {
               </p>
 
               <ul className="about-one__progress-box list-unstyled">
-                <Progresbar title="Time Awareness" value={90} />
-                <Progresbar title="Driver Experience" value={70} />
+                <Progresbar title="Custmor Satisfaction" value={4.5} />
+                <Progresbar title="Vehicle's Quality" value={70} />
               </ul>
 
               <div className="about-one__btn-box-and-call-box">

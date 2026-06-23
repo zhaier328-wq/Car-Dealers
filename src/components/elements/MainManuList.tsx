@@ -77,6 +77,8 @@ const MainManuList: React.FC<ComponentProps> = ({ onePageManuList }) => {
                 <Link href="/inner/cars">On Sale Cars</Link>
             </li>
 
+
+
             {/* WHOLESALE - Single */}
             <li className={currentPath === "/inner/wholesale" ? "current" : ""}>
                 <Link href="/inner/wholesale">Wholesale</Link>
@@ -89,12 +91,12 @@ const MainManuList: React.FC<ComponentProps> = ({ onePageManuList }) => {
 
             {/* CONTACT US - Single */}
             <li className={currentPath === "/inner/contact" ? "current" : ""}>
-                <Link href="/inner/contact">Contact Us</Link>
+                <Link href="/inner/contact">Contact</Link>
             </li>
 
             {/* ABOUT US - Single */}
             <li className={currentPath === "/inner/about" ? "current" : ""}>
-                <Link href="/inner/about">About Us</Link>
+                <Link href="/inner/about">About</Link>
             </li>
 
             {/* MORE - With Dropdown */}
@@ -104,6 +106,9 @@ const MainManuList: React.FC<ComponentProps> = ({ onePageManuList }) => {
                     <li className={currentPath === "/inner/blog" ? "current" : ""}>
                         <Link href="/inner/blog">Blog</Link>
                     </li>
+                     <li className={currentPath === "/inner/TradeIn" ? "current" : ""}>
+                <Link href="/inner/TradeIn">TradeIn</Link>
+            </li>
                     <li className={currentPath === "/inner/faqs" ? "current" : ""}>
                         <Link href="/inner/faq">FAQs</Link>
                       

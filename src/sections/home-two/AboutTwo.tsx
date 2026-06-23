@@ -24,8 +24,8 @@ const AboutTwo: React.FC = () => {
                                     <span className="section-title__tagline">About UKA Japan</span>
                                 </div>
                                 <h2 className="section-title__title title-animation">
-                                    <TextAnimation text='Welcome to UKA Japan' />
-                                    <TextAnimation text='car booking company' />
+                                    <TextAnimation text="Welcome to UKA " />
+                  <TextAnimation text="JAPAN MOTORS" />
                                 </h2>
                             </div>
                             <p className="about-two__text-1">Lorem ipsum is simply ipun txns mane so dummy text of free
