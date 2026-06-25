@@ -2,7 +2,7 @@
 import React from 'react';
 import { motion } from "framer-motion"
 import Link from 'next/link';
-import footerLogo from "../../../public/assets/images/resources/footer-logo.png"
+import footerLogo from "../../../public/assets/images/resources/footer-logo1.png"
 
 import Image from 'next/image';
 import LocationTabs from './LocationTabs';
@@ -48,7 +48,7 @@ const Footer: React.FC = () => {
                             <div className="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
                                 <div className="footer-widget__about">
                                     <div className="footer-widget__about-logo">
-                                        <Link href="/"><Image src={footerLogo} width={130} height={50} alt="logo" /></Link>
+                                        <Link href="/"><Image src={footerLogo} width={140} height={140} alt="logo" /></Link>
                                     </div>
                                     <p className="footer-widget__about-text">Car Is Where Early Adopters And Innovation
                                         Seekers Find Lively

@@ -1,6 +1,6 @@
 "use client"
 import React from "react";
-import logo from "../../../public/assets/images/resources/logo-2.png"
+import logo from "../../../public/assets/images/resources/footer-logo1.png"
 import useGorentContext from "../context/useGorentContext";
 import Link from "next/link";
 import Image from "next/image";
@@ -25,7 +25,7 @@ const SideBar: React.FC = () => {
 
                                 <div className="logo">
                                     <Link href="/">
-                                        <Image src={logo} width={130} height={50} alt="Logo" />
+                                        <Image src={logo} width={130} height={130} alt="Logo" />
                                     </Link>
                                 </div>
 
